@@ -1,0 +1,659 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Harmonia das Flores · Floricultura em Pomerode</title>
+<meta name="description" content="Floricultura em Pomerode (SC). Buquês, rosas, orquídeas e presentes sob encomenda. Peça pelo WhatsApp (47) 99907-1466.">
+<meta name="theme-color" content="#1d3328">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Great+Vibes&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#f8f2ea;--paper:#fffaf4;--ink:#1d3328;--ink-2:#45594d;--muted:#7d8a80;
+  --rose:#c4506a;--rose-2:#e9a3b1;--blush:#f5dfe1;--gold:#c7a46a;--line:rgba(29,51,40,.12);
+  --r:22px;--ease:cubic-bezier(.2,.8,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:Manrope,system-ui,sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+.serif{font-family:"Cormorant Garamond",Georgia,serif}
+.script{font-family:"Great Vibes",cursive;font-weight:400}
+.wrap{width:min(1200px,100% - 40px);margin-inline:auto}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--rose)}
+.eyebrow::before{content:"";width:28px;height:1px;background:currentColor}
+h2.title{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:clamp(38px,5.4vw,68px);line-height:1.02;letter-spacing:-.01em;margin-top:14px}
+h2.title em{font-style:italic;color:var(--rose)}
+.lead{color:var(--ink-2);font-size:clamp(15px,1.4vw,17px);max-width:56ch;margin-top:16px}
+section{position:relative}
+
+/* botões */
+.btn{position:relative;display:inline-flex;align-items:center;gap:10px;padding:15px 26px;border-radius:999px;font-weight:600;font-size:15px;transition:transform .35s var(--ease),box-shadow .35s var(--ease),background .3s;will-change:transform;overflow:hidden;isolation:isolate}
+.btn-rose{background:var(--rose);color:#fff;box-shadow:0 12px 30px -12px rgba(196,80,106,.7)}
+.btn-rose::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.35) 50%,transparent 70%);transform:translateX(-120%);transition:transform .8s var(--ease);z-index:-1}
+.btn-rose:hover::after{transform:translateX(120%)}
+.btn-rose:hover{box-shadow:0 18px 40px -14px rgba(196,80,106,.85)}
+.btn-ghost{border:1px solid var(--line);background:rgba(255,255,255,.55);backdrop-filter:blur(8px)}
+.btn-ghost:hover{background:#fff}
+.btn svg{width:18px;height:18px}
+
+/* nav */
+.nav{position:fixed;inset:0 0 auto;z-index:50;transition:background .4s,box-shadow .4s,padding .4s;padding:18px 0}
+.nav.solid{background:rgba(248,242,234,.86);backdrop-filter:blur(14px) saturate(1.3);box-shadow:0 1px 0 var(--line);padding:10px 0}
+.nav .wrap{display:flex;align-items:center;gap:28px}
+.logo{display:flex;align-items:center;gap:12px;line-height:1}
+.logo .mark{width:42px;height:42px;border-radius:50%;background:var(--paper);border:1px dashed rgba(29,51,40,.35);display:grid;place-items:center;font-family:"Great Vibes";font-size:24px;color:var(--rose)}
+.logo b{font-family:"Great Vibes";font-weight:400;font-size:28px}
+.logo small{display:block;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:3px}
+.nav ul{display:flex;gap:26px;list-style:none;margin-left:auto;font-size:14px;font-weight:500}
+.nav ul a{position:relative;padding:4px 0}
+.nav ul a::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:1px;background:var(--rose);transform:scaleX(0);transform-origin:right;transition:transform .4s var(--ease)}
+.nav ul a:hover::after{transform:scaleX(1);transform-origin:left}
+.nav .btn{padding:11px 20px;font-size:14px}
+.burger{display:none;margin-left:auto;width:44px;height:44px;border-radius:50%;background:var(--paper);border:1px solid var(--line);position:relative;z-index:60}
+.burger span{position:absolute;left:13px;right:13px;height:1.6px;background:var(--ink);transition:transform .4s var(--ease),opacity .3s}
+.burger span:nth-child(1){top:17px}.burger span:nth-child(2){top:25px}
+.menu-open .burger span:nth-child(1){transform:translateY(4px) rotate(45deg)}
+.menu-open .burger span:nth-child(2){transform:translateY(-4px) rotate(-45deg)}
+.mmenu{position:fixed;inset:0;z-index:55;background:var(--ink);color:var(--cream);clip-path:circle(0 at calc(100% - 42px) 40px);transition:clip-path .7s var(--ease);display:flex;flex-direction:column;justify-content:center;padding:0 32px;gap:6px}
+.menu-open .mmenu{clip-path:circle(150% at calc(100% - 42px) 40px)}
+.mmenu a{font-family:"Cormorant Garamond";font-size:44px;line-height:1.2;opacity:0;transform:translateY(20px);transition:.5s var(--ease)}
+.menu-open .mmenu a{opacity:1;transform:none}
+.menu-open .mmenu a:nth-child(2){transition-delay:.06s}.menu-open .mmenu a:nth-child(3){transition-delay:.12s}.menu-open .mmenu a:nth-child(4){transition-delay:.18s}.menu-open .mmenu a:nth-child(5){transition-delay:.24s}
+.mmenu .btn{margin-top:26px;align-self:flex-start;font-family:Manrope;font-size:16px}
+.menu-open .burger{background:var(--cream)}
+
+/* hero */
+.hero{min-height:100svh;display:flex;align-items:center;padding:120px 0 80px;overflow:hidden;background:radial-gradient(1200px 700px at 85% 10%,#f6dde2 0,transparent 60%),radial-gradient(900px 600px at 0% 100%,#e9efe2 0,transparent 60%),var(--cream)}
+#petals{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+.hero h1{font-family:"Cormorant Garamond";font-weight:500;font-size:clamp(48px,7.4vw,104px);line-height:.96;letter-spacing:-.02em;margin-top:18px}
+.hero h1 .script{display:block;font-size:.82em;color:var(--rose);line-height:1.1;margin-top:4px}
+.hero h1 .w{display:inline-block;overflow:hidden;vertical-align:top}
+.hero h1 .w>span{display:inline-block;transform:translateY(105%);transition:transform 1.1s var(--ease)}
+.loaded .hero h1 .w>span{transform:none}
+.hero .lead{margin-top:22px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.hero .meta{display:flex;flex-wrap:wrap;gap:22px;margin-top:38px;font-size:13px;color:var(--ink-2)}
+.hero .meta div{display:flex;align-items:center;gap:8px}
+.hero .meta b{font-family:"Cormorant Garamond";font-size:28px;color:var(--ink);font-weight:600}
+.fade{opacity:0;transform:translateY(16px);transition:1s var(--ease)}
+.loaded .fade{opacity:1;transform:none}
+.loaded .fade.d1{transition-delay:.5s}.loaded .fade.d2{transition-delay:.65s}.loaded .fade.d3{transition-delay:.8s}
+
+.collage{position:relative;height:min(640px,72vh)}
+.collage figure{position:absolute;border-radius:200px 200px var(--r) var(--r);overflow:hidden;box-shadow:0 40px 80px -40px rgba(29,51,40,.45);background:#ddd}
+.collage figure img{width:100%;height:100%;object-fit:cover;transform:scale(1.08);transition:transform 1.4s var(--ease)}
+.collage figure:hover img{transform:scale(1.14)}
+.collage .c1{width:58%;height:78%;right:4%;top:2%}
+.collage .c2{width:42%;height:50%;left:0;bottom:2%;border-radius:var(--r) var(--r) 200px 200px;border:6px solid var(--cream)}
+.collage .c3{width:30%;height:34%;right:0;bottom:-2%;border-radius:50%;border:6px solid var(--cream)}
+.collage .stamp{position:absolute;left:8%;top:6%;width:120px;height:120px;border-radius:50%;background:var(--paper);display:grid;place-items:center;box-shadow:0 20px 40px -20px rgba(0,0,0,.3);z-index:3}
+.collage .stamp svg{position:absolute;inset:0;animation:spin 18s linear infinite}
+.collage .stamp .script{font-size:34px;color:var(--rose)}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* marquee */
+.marquee{background:var(--ink);color:var(--cream);padding:20px 0;overflow:hidden;white-space:nowrap}
+.marquee .track{display:inline-flex;gap:40px;animation:mq 34s linear infinite;font-family:"Cormorant Garamond";font-size:clamp(22px,2.6vw,34px);font-style:italic}
+.marquee .track span{display:inline-flex;align-items:center;gap:40px}
+.marquee .track span::after{content:"✿";color:var(--rose-2);font-style:normal;font-size:.7em}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* catálogo */
+.catalog{padding:130px 0 110px}
+.cat-head{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:40px}
+.chip{padding:10px 18px;border-radius:999px;border:1px solid var(--line);font-size:14px;font-weight:500;background:rgba(255,255,255,.5);transition:.3s var(--ease)}
+.chip:hover{border-color:var(--ink)}
+.chip.on{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:34px}
+.card{background:var(--paper);border-radius:var(--r);overflow:hidden;border:1px solid var(--line);transition:transform .5s var(--ease),box-shadow .5s var(--ease),opacity .4s;transform-style:preserve-3d}
+.card:hover{box-shadow:0 30px 60px -30px rgba(29,51,40,.35)}
+.card.hide{display:none}
+.card .ph{position:relative;aspect-ratio:4/5;overflow:hidden}
+.card .ph img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease)}
+.card:hover .ph img{transform:scale(1.07)}
+.card .tag{position:absolute;left:14px;top:14px;background:rgba(255,250,244,.92);backdrop-filter:blur(6px);padding:6px 12px;border-radius:999px;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.card .quick{position:absolute;left:14px;right:14px;bottom:14px;transform:translateY(calc(100% + 20px));transition:transform .5s var(--ease)}
+.card:hover .quick{transform:none}
+.card .quick a{width:100%;justify-content:center}
+.card .body{padding:18px 20px 22px}
+.card h3{font-family:"Cormorant Garamond";font-weight:600;font-size:26px;line-height:1.1}
+.card p{color:var(--muted);font-size:14px;margin-top:6px}
+.card .row{display:flex;justify-content:space-between;align-items:center;margin-top:14px;font-size:14px}
+.card .row span{color:var(--rose);font-weight:600}
+.card .row a{font-weight:600;display:inline-flex;gap:6px;align-items:center}
+.card .row a svg{width:16px;transition:transform .3s var(--ease)}
+.card .row a:hover svg{transform:translateX(4px)}
+
+/* parallax ocasiões */
+.occasions{min-height:90vh;display:flex;align-items:center;color:#fff;overflow:hidden;padding:120px 0}
+.occasions .bg{position:absolute;inset:-15% 0;background:url(img/orquidea.jpg) center/cover;will-change:transform}
+.occasions::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(100deg,rgba(18,32,25,.92) 0,rgba(18,32,25,.7) 45%,rgba(18,32,25,.25) 100%)}
+.occasions .wrap{position:relative;z-index:2}
+.occasions .eyebrow{color:var(--rose-2)}
+.occasions h2.title em{color:var(--rose-2)}
+.occasions .lead{color:rgba(255,255,255,.8)}
+.occ-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:44px;max-width:780px}
+.occ{border:1px solid rgba(255,255,255,.2);border-radius:16px;padding:18px;background:rgba(255,255,255,.06);backdrop-filter:blur(6px);transition:.4s var(--ease)}
+.occ:hover{background:rgba(255,255,255,.14);transform:translateY(-4px)}
+.occ i{font-style:normal;font-size:22px}
+.occ b{display:block;font-family:"Cormorant Garamond";font-size:24px;font-weight:600;margin-top:6px}
+.occ small{color:rgba(255,255,255,.7);font-size:13px}
+
+/* como pedir */
+.how{padding:130px 0}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px;counter-reset:s}
+.step{padding:34px 30px;border-radius:var(--r);background:var(--paper);border:1px solid var(--line);position:relative;overflow:hidden}
+.step::before{counter-increment:s;content:"0" counter(s);font-family:"Cormorant Garamond";font-size:90px;line-height:1;color:var(--blush);position:absolute;right:18px;top:6px;font-weight:600}
+.step .ic{width:52px;height:52px;border-radius:50%;background:var(--blush);display:grid;place-items:center;color:var(--rose);position:relative}
+.step .ic svg{width:24px}
+.step h3{font-family:"Cormorant Garamond";font-size:30px;font-weight:600;margin-top:22px;position:relative}
+.step p{color:var(--ink-2);margin-top:8px;font-size:15px;position:relative}
+
+/* galeria */
+.gallery{padding:0 0 130px}
+.g-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:14px;margin-top:48px}
+.g-grid a{position:relative;border-radius:18px;overflow:hidden}
+.g-grid a img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease)}
+.g-grid a:hover img{transform:scale(1.08)}
+.g-grid a::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 50%,rgba(0,0,0,.35));opacity:0;transition:.4s}
+.g-grid a:hover::after{opacity:1}
+.g-grid .t{grid-row:span 2}
+.g-grid .ig{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:8px;background:linear-gradient(135deg,#f6c7d0,#c4506a);color:#fff;padding:20px}
+.g-grid .ig::after{display:none}
+.g-grid .ig b{font-family:"Cormorant Garamond";font-size:28px;line-height:1.1}
+.g-grid .ig small{opacity:.9;font-size:13px}
+.lb{position:fixed;inset:0;z-index:80;background:rgba(15,25,20,.9);display:grid;place-items:center;opacity:0;pointer-events:none;transition:.4s;padding:20px}
+.lb.on{opacity:1;pointer-events:auto}
+.lb img{max-height:86vh;border-radius:16px;transform:scale(.94);transition:.5s var(--ease)}
+.lb.on img{transform:none}
+.lb button{position:absolute;top:18px;right:18px;width:46px;height:46px;border-radius:50%;background:#fff;font-size:22px}
+
+/* feedbacks */
+.reviews{padding:130px 0;background:var(--ink);color:var(--cream);overflow:hidden}
+.reviews .eyebrow{color:var(--rose-2)}
+.reviews h2.title em{color:var(--rose-2)}
+.rv-top{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap}
+.score{display:flex;align-items:center;gap:18px}
+.score b{font-family:"Cormorant Garamond";font-size:72px;line-height:1;font-weight:500}
+.stars{color:#f2c46b;letter-spacing:2px}
+.rows{margin-top:56px;display:flex;flex-direction:column;gap:18px;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.row-track{display:flex;gap:18px;width:max-content;animation:mq 60s linear infinite}
+.row-track.rev{animation-direction:reverse;animation-duration:70s}
+.rows:hover .row-track{animation-play-state:paused}
+.rcard{width:360px;padding:26px;border-radius:var(--r);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);flex-shrink:0}
+.rcard p{font-family:"Cormorant Garamond";font-size:21px;line-height:1.35;margin-top:12px}
+.rcard .who{display:flex;align-items:center;gap:12px;margin-top:18px;font-size:14px}
+.rcard .av{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-weight:700;background:var(--rose);color:#fff}
+.rcard .who small{display:block;color:rgba(255,255,255,.55);font-size:12px}
+
+/* loja */
+.visit{padding:130px 0}
+.visit .wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center}
+.info{margin-top:32px;display:grid;gap:14px}
+.info div{display:flex;gap:16px;align-items:flex-start;padding:18px 20px;background:var(--paper);border:1px solid var(--line);border-radius:16px}
+.info svg{width:22px;color:var(--rose);flex-shrink:0;margin-top:2px}
+.info b{display:block;font-size:15px}
+.info span{color:var(--ink-2);font-size:14px}
+.map{border-radius:var(--r);overflow:hidden;height:520px;border:1px solid var(--line);box-shadow:0 40px 80px -50px rgba(29,51,40,.5)}
+.map iframe{width:100%;height:100%;border:0;filter:saturate(.8)}
+
+/* cta */
+.cta{padding:0 0 130px}
+.cta-box{position:relative;border-radius:32px;overflow:hidden;padding:clamp(48px,8vw,100px) clamp(24px,6vw,80px);color:#fff;text-align:center}
+.cta-box .bg{position:absolute;inset:-20% 0;background:url(img/rosas.jpg) center/cover;will-change:transform}
+.cta-box::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(120,30,55,.75),rgba(29,51,40,.88))}
+.cta-box>*{position:relative;z-index:2}
+.cta-box h2{font-family:"Cormorant Garamond";font-weight:500;font-size:clamp(40px,6vw,80px);line-height:1}
+.cta-box h2 .script{display:block;color:var(--rose-2);font-size:.9em}
+.cta-box p{max-width:520px;margin:18px auto 30px;color:rgba(255,255,255,.85)}
+.cta-box .btn-ghost{color:var(--ink)}
+
+/* footer */
+footer{background:#14241c;color:rgba(248,242,234,.75);padding:90px 0 30px;overflow:hidden}
+.f-big{font-family:"Great Vibes";font-size:clamp(70px,15vw,220px);line-height:.9;color:transparent;-webkit-text-stroke:1px rgba(233,163,177,.45);white-space:nowrap;margin-bottom:60px;text-align:center}
+.f-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+.f-grid h4{color:var(--cream);font-size:12px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:16px}
+.f-grid a,.f-grid p{display:block;font-size:14px;margin-bottom:10px;transition:color .3s}
+.f-grid a:hover{color:var(--rose-2)}
+.f-grid .logo b{color:var(--cream)}
+.f-grid .logo .mark{background:transparent;border-color:rgba(255,255,255,.3)}
+.socials{display:flex;gap:10px;margin-top:20px}
+.socials a{width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.18);display:grid;place-items:center;margin:0}
+.socials a:hover{background:var(--rose);border-color:var(--rose);color:#fff}
+.socials svg{width:18px}
+.f-bot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:60px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);font-size:13px}
+.f-bot a:hover{color:var(--rose-2)}
+
+/* whatsapp */
+.fab{position:fixed;right:20px;bottom:20px;z-index:40;width:60px;height:60px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;box-shadow:0 14px 30px -10px rgba(37,211,102,.7);transition:transform .3s var(--ease)}
+.fab:hover{transform:scale(1.08)}
+.fab svg{width:30px}
+.fab::before{content:"";position:absolute;inset:0;border-radius:50%;background:#25d366;animation:ping 2.4s infinite;z-index:-1}
+@keyframes ping{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.7);opacity:0}}
+
+/* revelar */
+.rv{opacity:0;transform:translateY(40px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}
+
+/* cursor */
+.cursor{position:fixed;left:0;top:0;opacity:0;width:36px;height:36px;border:1px solid var(--rose);border-radius:50%;pointer-events:none;z-index:90;transform:translate(-50%,-50%);transition:width .3s,height .3s,background .3s;mix-blend-mode:multiply}
+.cursor.big{width:70px;height:70px;background:rgba(196,80,106,.12)}
+@media (hover:none){.cursor{display:none}}
+
+@media (max-width:960px){
+  .nav ul,.nav .btn{display:none}
+  .burger{display:block}
+  .hero{padding-top:110px}
+  .hero .wrap{grid-template-columns:1fr;gap:44px}
+  .collage{height:440px}
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:1fr}
+  .visit .wrap{grid-template-columns:1fr}
+  .map{height:360px}
+  .f-grid{grid-template-columns:1fr 1fr}
+  .g-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:180px}
+}
+@media (max-width:560px){
+  .logo b{font-size:23px}.logo .mark{width:36px;height:36px;font-size:20px}.logo small{font-size:9px}
+  .burger{flex-shrink:0}
+  .wrap{width:calc(100% - 32px)}
+  .hero h1{font-size:50px}
+  .collage{height:380px}
+  .collage .stamp{width:92px;height:92px;left:0}
+  .collage .stamp .script{font-size:26px}
+  .grid{grid-template-columns:1fr 1fr;gap:12px}
+  .card .body{padding:12px 12px 16px}
+  .card h3{font-size:20px}
+  .card p{display:none}
+  .card .row{flex-direction:column;align-items:flex-start;gap:6px;font-size:13px}
+  .card .quick{display:none}
+  .occ-list{grid-template-columns:1fr 1fr}
+  .rcard{width:280px}
+  .rcard p{font-size:19px}
+  .f-grid{grid-template-columns:1fr}
+  .catalog,.how,.reviews,.visit{padding:90px 0}
+  .gallery,.cta{padding-bottom:90px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv,.fade,.hero h1 .w>span{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<div class="cursor" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#" class="logo" aria-label="Harmonia das Flores">
+      <span class="mark">H</span>
+      <span><b>Harmonia das Flores</b><small>Floricultura · Pomerode</small></span>
+    </a>
+    <ul>
+      <li><a href="#catalogo">Catálogo</a></li>
+      <li><a href="#ocasioes">Ocasiões</a></li>
+      <li><a href="#como-pedir">Como pedir</a></li>
+      <li><a href="#feedbacks">Feedbacks</a></li>
+      <li><a href="#loja">A loja</a></li>
+    </ul>
+    <a class="btn btn-rose wa" data-msg="Olá! Vim pelo site e quero fazer uma encomenda 🌷" href="#">Encomendar</a>
+    <button class="burger" aria-label="Abrir menu"><span></span><span></span></button>
+  </div>
+</header>
+
+<nav class="mmenu" aria-label="Menu">
+  <a href="#catalogo">Catálogo</a>
+  <a href="#ocasioes">Ocasiões</a>
+  <a href="#como-pedir">Como pedir</a>
+  <a href="#feedbacks">Feedbacks</a>
+  <a href="#loja">A loja</a>
+  <a class="btn btn-rose wa" data-msg="Olá! Vim pelo site e quero fazer uma encomenda 🌷" href="#">Encomendar no WhatsApp</a>
+</nav>
+
+<section class="hero">
+  <canvas id="petals"></canvas>
+  <div class="wrap">
+    <div>
+      <span class="eyebrow fade">Floricultura em Pomerode · SC</span>
+      <h1>
+        <span class="w"><span>Flores</span></span> <span class="w"><span style="transition-delay:.08s">que</span></span> <span class="w"><span style="transition-delay:.16s">dizem</span></span>
+        <span class="w script"><span style="transition-delay:.3s">o que você sente.</span></span>
+      </h1>
+      <p class="lead fade d1">Buquês, rosas, orquídeas e presentes montados à mão, com carinho, para cada momento especial. Faça sua encomenda pelo WhatsApp e a gente cuida do resto.</p>
+      <div class="ctas fade d2">
+        <a class="btn btn-rose wa mag" data-msg="Olá! Vim pelo site e quero fazer uma encomenda 🌷" href="#">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .7.5l1 2.3c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l2.2 1c.3.2.5.2.6.4 0 .1 0 .7-.3 1.3Z"/></svg>
+          Encomendar agora
+        </a>
+        <a class="btn btn-ghost mag" href="#catalogo">Ver catálogo</a>
+      </div>
+      <div class="meta fade d3">
+        <div><b>10 mil+</b> arranjos<br>publicados</div>
+        <div><b>4,6 mil</b> clientes<br>no Instagram</div>
+        <div><b style="color:var(--rose)">♥</b> feito à mão<br>com carinho</div>
+      </div>
+    </div>
+    <div class="collage">
+      <div class="stamp" aria-hidden="true">
+        <svg viewBox="0 0 120 120"><defs><path id="circ" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs><text font-size="10.5" letter-spacing="3" fill="#1d3328" font-family="Manrope" font-weight="600"><textPath href="#circ">FEITO À MÃO · COM AMOR · POMERODE · </textPath></text></svg>
+        <span class="script">HF</span>
+      </div>
+      <figure class="c1" data-p="-0.06"><img src="img/rosas.jpg" alt="Buquê de rosas vermelhas" fetchpriority="high"></figure>
+      <figure class="c2" data-p="0.08"><img src="img/girassol.jpg" alt="Buquê de girassóis com pelúcia"></figure>
+      <figure class="c3" data-p="0.14"><img src="img/orquidea.jpg" alt="Orquídea para presente"></figure>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span>Buquês</span><span>Rosas</span><span>Orquídeas</span><span>Cestas de presente</span><span>Arranjos</span><span>Casamentos</span><span>Datas especiais</span>
+    <span>Buquês</span><span>Rosas</span><span>Orquídeas</span><span>Cestas de presente</span><span>Arranjos</span><span>Casamentos</span><span>Datas especiais</span>
+  </div>
+</div>
+
+<section class="catalog" id="catalogo">
+  <div class="wrap">
+    <div class="cat-head">
+      <div>
+        <span class="eyebrow rv">Catálogo</span>
+        <h2 class="title rv d1">Escolha o seu <em>presente</em></h2>
+      </div>
+      <p class="lead rv d2">Cada peça é montada na hora, com flores frescas. Gostou de alguma? Toque em “Pedir” e a mensagem já vai prontinha no WhatsApp.</p>
+    </div>
+    <div class="chips rv" role="tablist">
+      <button class="chip on" data-f="all">Todos</button>
+      <button class="chip" data-f="buque">Buquês</button>
+      <button class="chip" data-f="rosas">Rosas</button>
+      <button class="chip" data-f="plantas">Orquídeas e plantas</button>
+      <button class="chip" data-f="presente">Presentes</button>
+    </div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<section class="occasions" id="ocasioes">
+  <div class="bg" data-p="0.25"></div>
+  <div class="wrap">
+    <span class="eyebrow rv">Para cada momento</span>
+    <h2 class="title rv d1">Tem flor certa<br>para <em>toda ocasião</em></h2>
+    <p class="lead rv d2">Conta pra gente o momento e para quem é. A gente sugere a combinação perfeita de flores, cores e embalagem.</p>
+    <div class="occ-list">
+      <div class="occ rv"><i>🎂</i><b>Aniversário</b><small>Cores alegres e cartão</small></div>
+      <div class="occ rv d1"><i>❤️</i><b>Amor</b><small>Rosas e declarações</small></div>
+      <div class="occ rv d2"><i>👶</i><b>Nascimento</b><small>Delicados e suaves</small></div>
+      <div class="occ rv"><i>💍</i><b>Casamento</b><small>Buquê e decoração</small></div>
+      <div class="occ rv d1"><i>🎓</i><b>Formatura</b><small>Para celebrar conquistas</small></div>
+      <div class="occ rv d2"><i>🕊️</i><b>Condolências</b><small>Coroas e arranjos</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="how" id="como-pedir">
+  <div class="wrap">
+    <span class="eyebrow rv">Como pedir</span>
+    <h2 class="title rv d1">Simples como <em>mandar um oi</em></h2>
+    <div class="steps">
+      <div class="step rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.6-7 10-7 10Z"/></svg></div><h3>Escolha</h3><p>Navegue pelo catálogo ou mande uma foto de referência. Montamos do seu jeito.</p></div>
+      <div class="step rv d1"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.9A8 8 0 1 1 21 12Z"/></svg></div><h3>Fale com a gente</h3><p>Pelo WhatsApp ou direct do Instagram. Combine data, horário e o recado do cartão.</p></div>
+      <div class="step rv d2"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg></div><h3>Receba ou retire</h3><p>Entregamos em Pomerode e região, ou você retira na loja no Centro.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery">
+  <div class="wrap">
+    <span class="eyebrow rv">Nossos arranjos</span>
+    <h2 class="title rv d1">Feitos com <em>carinho</em></h2>
+    <div class="g-grid">
+      <a href="img/girassol.jpg" class="t rv"><img src="img/girassol.jpg" alt="Girassóis" loading="lazy"></a>
+      <a href="img/rosas.jpg" class="rv d1"><img src="img/rosas.jpg" alt="Rosas vermelhas" loading="lazy"></a>
+      <a href="img/jardim.jpg" class="t rv d2"><img src="img/jardim.jpg" alt="Jardim de orquídeas" loading="lazy"></a>
+      <a href="img/buque-colorido.jpg" class="rv d3"><img src="img/buque-colorido.jpg" alt="Buquê colorido" loading="lazy"></a>
+      <a href="img/orquidea.jpg" class="rv"><img src="img/orquidea.jpg" alt="Orquídea de presente" loading="lazy"></a>
+      <a class="ig rv d1" href="https://instagram.com/harmoniadasfloresfloricultura" target="_blank" rel="noopener" data-noblank>
+        <svg width="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+        <b>+10 mil arranjos no Instagram</b><small>@harmoniadasfloresfloricultura</small>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="reviews" id="feedbacks">
+  <div class="wrap">
+    <div class="rv-top">
+      <div>
+        <span class="eyebrow rv">Feedbacks</span>
+        <h2 class="title rv d1">Quem recebe, <em>se emociona</em></h2>
+      </div>
+      <div class="score rv d2"><b>5,0</b><div><div class="stars">★★★★★</div><small style="opacity:.7">Clientes de Pomerode e região</small></div></div>
+    </div>
+  </div>
+  <div class="rows">
+    <div class="row-track" id="r1"></div>
+    <div class="row-track rev" id="r2"></div>
+  </div>
+</section>
+
+<section class="visit" id="loja">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow rv">A loja</span>
+      <h2 class="title rv d1">Venha sentir o <em>perfume</em> de perto</h2>
+      <p class="lead rv d2">Nossa loja fica no Centro de Pomerode. Passe para escolher pessoalmente ou retirar sua encomenda.</p>
+      <div class="info">
+        <div class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg><p><b>Endereço</b><span>Nº 1353, Centro · Pomerode, SC</span></p></div>
+        <div class="rv d1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.9A8 8 0 1 1 21 12Z"/></svg><p><b>WhatsApp</b><span>(47) 99907-1466</span></p></div>
+        <div class="rv d2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><p><b>Telefone</b><span>(47) 3387-4964</span></p></div>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:26px" class="rv d3">
+        <a class="btn btn-rose" href="https://www.google.com/maps/search/?api=1&query=Harmonia+das+Flores+Pomerode" target="_blank" rel="noopener">Abrir no Maps</a>
+        <a class="btn btn-ghost" href="tel:+554733874964">Ligar para a loja</a>
+      </div>
+    </div>
+    <div class="map rv d1">
+      <iframe loading="lazy" title="Mapa da loja" src="https://www.google.com/maps?q=Harmonia+das+Flores+Floricultura+Pomerode+SC&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <div class="cta-box rv">
+      <div class="bg" data-p="0.18"></div>
+      <h2>Surpreenda alguém <span class="script">hoje mesmo</span></h2>
+      <p>Conte para quem é e o que quer dizer. A gente transforma em flores.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+        <a class="btn btn-rose wa mag" data-msg="Olá! Quero surpreender alguém com flores 💐" href="#">Fazer minha encomenda</a>
+        <a class="btn btn-ghost mag" href="https://instagram.com/harmoniadasfloresfloricultura" target="_blank" rel="noopener">Ver Instagram</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="f-big" aria-hidden="true">Harmonia das Flores</div>
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <a href="#" class="logo"><span class="mark">H</span><span><b>Harmonia das Flores</b><small>Floricultura · Pomerode</small></span></a>
+        <p style="margin-top:18px;max-width:300px">Flores frescas, arranjos feitos à mão e presentes para todos os momentos.</p>
+        <div class="socials">
+          <a href="https://instagram.com/harmoniadasfloresfloricultura" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
+          <a class="wa" href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.9A8 8 0 1 1 21 12Z"/></svg></a>
+          <a href="tel:+554733874964" aria-label="Telefone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Navegue</h4>
+        <a href="#catalogo">Catálogo</a><a href="#ocasioes">Ocasiões</a><a href="#como-pedir">Como pedir</a><a href="#feedbacks">Feedbacks</a>
+      </div>
+      <div>
+        <h4>Catálogo</h4>
+        <a href="#catalogo">Buquês</a><a href="#catalogo">Rosas</a><a href="#catalogo">Orquídeas</a><a href="#catalogo">Presentes</a>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <a class="wa" href="#">WhatsApp (47) 99907-1466</a>
+        <a href="tel:+554733874964">(47) 3387-4964</a>
+        <p>Nº 1353, Centro<br>Pomerode · SC</p>
+      </div>
+    </div>
+    <div class="f-bot">
+      <span>© <span id="yr"></span> Harmonia das Flores. Todos os direitos reservados.</span>
+      <a href="https://comply.website" target="_blank" rel="noopener">Site por Comply</a>
+    </div>
+  </div>
+</footer>
+
+<a class="fab wa" data-msg="Olá! Vim pelo site e quero fazer uma encomenda 🌷" href="#" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .7.5l1 2.3c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l2.2 1c.3.2.5.2.6.4 0 .1 0 .7-.3 1.3Z"/></svg>
+</a>
+
+<div class="lb" id="lb"><button aria-label="Fechar">×</button><img alt=""></div>
+
+<script>
+const WA = "5547999071466";
+const wa = (msg) => `https://wa.me/${WA}?text=${encodeURIComponent(msg)}`;
+document.querySelectorAll(".wa").forEach((a) => {
+  a.href = wa(a.dataset.msg || "Olá! Vim pelo site 🌷");
+  a.target = "_blank"; a.rel = "noopener";
+});
+document.getElementById("yr").textContent = new Date().getFullYear();
+
+/* catálogo */
+const ITEMS = [
+  { n: "Buquê Primavera", d: "Gérberas, rosas e flores do campo em embalagem listrada.", c: "buque", img: "buque-colorido.jpg", t: "Mais pedido" },
+  { n: "Rosas Vermelhas", d: "Rosas nacionais com astromélias e eucalipto.", c: "rosas", img: "rosas.jpg", t: "Clássico" },
+  { n: "Girassol + Pelúcia", d: "Girassóis com pelúcia. Perfeito para surpreender.", c: "presente", img: "girassol.jpg", t: "Presente" },
+  { n: "Orquídea Presente", d: "Orquídea em vaso com embalagem e chocolates.", c: "plantas", img: "orquidea.jpg", t: "Dura meses" },
+  { n: "Orquídeas da Estação", d: "Orquídeas e plantas para casa, jardim e escritório.", c: "plantas", img: "jardim.jpg", t: "Plantas" },
+  { n: "Monte o seu", d: "Escolha flores, cores e embalagem. A gente monta do seu jeito.", c: "buque", img: "buque-colorido.jpg", t: "Personalizado" },
+];
+const arrow = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+const grid = document.getElementById("grid");
+grid.innerHTML = ITEMS.map((it, i) => `
+  <article class="card rv ${i % 3 ? "d" + (i % 3) : ""}" data-c="${it.c}">
+    <div class="ph"><img src="img/${it.img}" alt="${it.n}" loading="lazy"><span class="tag">${it.t}</span>
+      <div class="quick"><a class="btn btn-rose" target="_blank" rel="noopener" href="${wa(`Olá! Tenho interesse no "${it.n}" que vi no site 🌷`)}">Pedir pelo WhatsApp</a></div></div>
+    <div class="body"><h3>${it.n}</h3><p>${it.d}</p>
+      <div class="row"><span>Sob encomenda</span><a target="_blank" rel="noopener" href="${wa(`Olá! Tenho interesse no "${it.n}" que vi no site 🌷`)}">Pedir ${arrow}</a></div></div>
+  </article>`).join("");
+
+document.querySelectorAll(".chip").forEach((b) => b.addEventListener("click", () => {
+  document.querySelectorAll(".chip").forEach((x) => x.classList.toggle("on", x === b));
+  const f = b.dataset.f;
+  grid.querySelectorAll(".card").forEach((card) => {
+    const show = f === "all" || card.dataset.c === f;
+    card.classList.toggle("hide", !show);
+    if (show) { card.animate([{ opacity: 0, transform: "translateY(20px)" }, { opacity: 1, transform: "none" }], { duration: 500, easing: "cubic-bezier(.2,.8,.2,1)" }); }
+  });
+}));
+
+/* feedbacks (modelo: trocar pelos feedbacks reais dos destaques do Instagram) */
+const REV = [
+  ["Mariana S.", "Buquê de aniversário", "O buquê chegou lindo, exatamente como eu pedi. Minha mãe chorou de emoção!"],
+  ["Carlos E.", "Rosas vermelhas", "Atendimento rápido pelo WhatsApp e entrega no horário. Super recomendo."],
+  ["Juliana P.", "Orquídea", "A orquídea está florida até hoje. Qualidade impecável e embalagem caprichada."],
+  ["Fernanda K.", "Casamento", "Fizeram meu buquê de noiva e ficou um sonho. Obrigada pelo carinho!"],
+  ["Rafael M.", "Girassóis + pelúcia", "Surpreendi minha namorada e ela amou. Flores fresquinhas."],
+  ["Patrícia L.", "Cesta de presente", "Montaram tudo do jeito que imaginei. Já virei cliente fiel."],
+];
+const rcard = ([n, w, t]) => `<div class="rcard"><div class="stars">★★★★★</div><p>“${t}”</p><div class="who"><span class="av">${n[0]}</span><span>${n}<small>${w}</small></span></div></div>`;
+const half = (a) => a.map(rcard).join("");
+document.getElementById("r1").innerHTML = half(REV.slice(0, 3).concat(REV.slice(0, 3))).repeat(2);
+document.getElementById("r2").innerHTML = half(REV.slice(3).concat(REV.slice(3))).repeat(2);
+
+/* nav, menu */
+const nav = document.getElementById("nav");
+document.querySelector(".burger").addEventListener("click", () => document.body.classList.toggle("menu-open"));
+document.querySelectorAll(".mmenu a").forEach((a) => a.addEventListener("click", () => document.body.classList.remove("menu-open")));
+
+/* revelar ao rolar */
+const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+document.querySelectorAll(".rv").forEach((el) => io.observe(el));
+
+/* parallax */
+const par = [...document.querySelectorAll("[data-p]")];
+let ticking = false;
+function onScroll() {
+  const y = scrollY;
+  nav.classList.toggle("solid", y > 30);
+  par.forEach((el) => {
+    const r = el.parentElement.getBoundingClientRect();
+    if (r.bottom < -200 || r.top > innerHeight + 200) return;
+    const mid = r.top + r.height / 2 - innerHeight / 2;
+    el.style.transform = `translate3d(0,${(-mid * parseFloat(el.dataset.p)).toFixed(1)}px,0)`;
+  });
+  ticking = false;
+}
+addEventListener("scroll", () => { if (!ticking) { requestAnimationFrame(onScroll); ticking = true; } }, { passive: true });
+onScroll();
+
+/* lightbox */
+const lb = document.getElementById("lb");
+document.querySelectorAll(".g-grid a:not([data-noblank])").forEach((a) => a.addEventListener("click", (e) => {
+  e.preventDefault(); lb.querySelector("img").src = a.getAttribute("href"); lb.classList.add("on");
+}));
+lb.addEventListener("click", () => lb.classList.remove("on"));
+addEventListener("keydown", (e) => e.key === "Escape" && lb.classList.remove("on"));
+
+/* desktop: cursor, botões magnéticos, cards 3D */
+if (matchMedia("(hover:hover) and (pointer:fine)").matches) {
+  const cur = document.querySelector(".cursor");
+  let cx = 0, cy = 0, tx = 0, ty = 0;
+  addEventListener("mousemove", (e) => { tx = e.clientX; ty = e.clientY; cur.style.opacity = 1; });
+  (function loop() { cx += (tx - cx) * 0.2; cy += (ty - cy) * 0.2; cur.style.transform = `translate(${cx - 18}px,${cy - 18}px)`; requestAnimationFrame(loop); })();
+  cur.style.left = cur.style.top = "0";
+  document.querySelectorAll("a,button,.card").forEach((el) => {
+    el.addEventListener("mouseenter", () => cur.classList.add("big"));
+    el.addEventListener("mouseleave", () => cur.classList.remove("big"));
+  });
+  document.querySelectorAll(".mag").forEach((b) => {
+    b.addEventListener("mousemove", (e) => { const r = b.getBoundingClientRect(); b.style.transform = `translate(${(e.clientX - r.left - r.width / 2) * 0.25}px,${(e.clientY - r.top - r.height / 2) * 0.35}px)`; });
+    b.addEventListener("mouseleave", () => (b.style.transform = ""));
+  });
+  grid.addEventListener("mousemove", (e) => {
+    const card = e.target.closest(".card"); if (!card) return;
+    const r = card.getBoundingClientRect();
+    card.style.transform = `perspective(900px) rotateY(${((e.clientX - r.left) / r.width - 0.5) * 6}deg) rotateX(${((e.clientY - r.top) / r.height - 0.5) * -6}deg) translateY(-6px)`;
+  });
+  grid.addEventListener("mouseout", (e) => { const card = e.target.closest(".card"); if (card && !card.contains(e.relatedTarget)) card.style.transform = ""; });
+}
+
+/* pétalas caindo no hero */
+const cv = document.getElementById("petals"), ctx = cv.getContext("2d");
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+let W, H, P = [];
+function size() { const d = Math.min(devicePixelRatio, 2); W = cv.clientWidth; H = cv.clientHeight; cv.width = W * d; cv.height = H * d; ctx.setTransform(d, 0, 0, d, 0, 0); }
+size(); addEventListener("resize", size);
+const N = innerWidth < 600 ? 14 : 26;
+for (let i = 0; i < N; i++) P.push({ x: Math.random() * W, y: Math.random() * H, s: 6 + Math.random() * 9, v: 0.3 + Math.random() * 0.7, a: Math.random() * 6.28, w: 0.01 + Math.random() * 0.02, c: Math.random() > 0.5 ? "233,163,177" : "196,80,106" });
+let heroOn = true;
+new IntersectionObserver(([e]) => (heroOn = e.isIntersecting)).observe(cv);
+function draw() {
+  if (heroOn && !document.hidden) {
+    ctx.clearRect(0, 0, W, H);
+    for (const p of P) {
+      p.y += p.v; p.a += p.w; p.x += Math.sin(p.a) * 0.6;
+      if (p.y > H + 20) { p.y = -20; p.x = Math.random() * W; }
+      ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.a);
+      ctx.fillStyle = `rgba(${p.c},.55)`;
+      ctx.beginPath(); ctx.ellipse(0, 0, p.s, p.s * 0.55, 0, 0, 6.28); ctx.fill(); ctx.restore();
+    }
+  }
+  requestAnimationFrame(draw);
+}
+if (!reduce) draw();
+
+addEventListener("load", () => document.body.classList.add("loaded"));
+setTimeout(() => document.body.classList.add("loaded"), 1200);
+</script>
+</body>
+</html>
