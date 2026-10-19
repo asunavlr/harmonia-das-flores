@@ -60,6 +60,8 @@ section{position:relative}
 .menu-open .burger span:nth-child(1){transform:translateY(4px) rotate(45deg)}
 .menu-open .burger span:nth-child(2){transform:translateY(-4px) rotate(-45deg)}
 .mmenu{position:fixed;inset:0;z-index:55;background:var(--ink);color:var(--cream);clip-path:circle(0 at calc(100% - 42px) 40px);transition:clip-path .7s var(--ease);display:flex;flex-direction:column;justify-content:center;padding:0 32px;gap:6px}
+.menu-open .nav{z-index:70;background:transparent;box-shadow:none;backdrop-filter:none}
+.menu-open .nav .logo{opacity:0;pointer-events:none}
 .menu-open .mmenu{clip-path:circle(150% at calc(100% - 42px) 40px)}
 .mmenu a{font-family:"Cormorant Garamond";font-size:44px;line-height:1.2;opacity:0;transform:translateY(20px);transition:.5s var(--ease)}
 .menu-open .mmenu a{opacity:1;transform:none}
