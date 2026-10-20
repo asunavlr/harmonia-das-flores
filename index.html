@@ -121,6 +121,7 @@ section{position:relative}
 .card .ph img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease)}
 .card:hover .ph img{transform:scale(1.07)}
 .card .tag{position:absolute;left:14px;top:14px;background:rgba(255,250,244,.92);backdrop-filter:blur(6px);padding:6px 12px;border-radius:999px;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.card .tag-new{background:var(--rose);color:#fff}
 .card .quick{position:absolute;left:14px;right:14px;bottom:14px;transform:translateY(calc(100% + 20px));transition:transform .5s var(--ease)}
 .card:hover .quick{transform:none}
 .card .quick a{width:100%;justify-content:center}
@@ -276,7 +277,7 @@ footer{background:#14241c;color:rgba(248,242,234,.75);padding:90px 0 30px;overfl
   .card h3{font-size:20px}
   .card p{display:none}
   .card .row{flex-direction:column;align-items:flex-start;gap:6px;font-size:13px}
-  .card .quick{display:none}
+.card .quick{display:none}
   .occ-list{grid-template-columns:1fr 1fr}
   .rcard{width:280px}
   .rcard p{font-size:19px}
@@ -371,6 +372,7 @@ footer{background:#14241c;color:rgba(248,242,234,.75);padding:90px 0 30px;overfl
     </div>
     <div class="chips rv" role="tablist">
       <button class="chip on" data-f="all">Todos</button>
+      <button class="chip" data-f="novo" id="chip-novo" hidden>✿ Novidades</button>
       <button class="chip" data-f="buque">Buquês</button>
       <button class="chip" data-f="rosas">Rosas</button>
       <button class="chip" data-f="plantas">Orquídeas e plantas</button>
@@ -530,29 +532,29 @@ document.querySelectorAll(".wa").forEach((a) => {
 document.getElementById("yr").textContent = new Date().getFullYear();
 
 /* catálogo */
-const ITEMS = [
-  { n: "Buquê Primavera", d: "Gérberas, rosas e flores do campo em embalagem listrada.", c: "buque", img: "buque-colorido.jpg", t: "Mais pedido" },
-  { n: "Rosas Vermelhas", d: "Rosas nacionais com astromélias e eucalipto.", c: "rosas", img: "rosas.jpg", t: "Clássico" },
-  { n: "Girassol + Pelúcia", d: "Girassóis com pelúcia. Perfeito para surpreender.", c: "presente", img: "girassol.jpg", t: "Presente" },
-  { n: "Orquídea Presente", d: "Orquídea em vaso com embalagem e chocolates.", c: "plantas", img: "orquidea.jpg", t: "Dura meses" },
-  { n: "Orquídeas da Estação", d: "Orquídeas e plantas para casa, jardim e escritório.", c: "plantas", img: "jardim.jpg", t: "Plantas" },
-  { n: "Monte o seu", d: "Escolha flores, cores e embalagem. A gente monta do seu jeito.", c: "buque", img: "buque-colorido.jpg", t: "Personalizado" },
-];
 const arrow = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
 const grid = document.getElementById("grid");
-grid.innerHTML = ITEMS.map((it, i) => `
-  <article class="card rv ${i % 3 ? "d" + (i % 3) : ""}" data-c="${it.c}">
-    <div class="ph"><img src="img/${it.img}" alt="${it.n}" loading="lazy"><span class="tag">${it.t}</span>
-      <div class="quick"><a class="btn btn-rose" target="_blank" rel="noopener" href="${wa(`Olá! Tenho interesse no "${it.n}" que vi no site 🌷`)}">Pedir pelo WhatsApp</a></div></div>
-    <div class="body"><h3>${it.n}</h3><p>${it.d}</p>
-      <div class="row"><span>Sob encomenda</span><a target="_blank" rel="noopener" href="${wa(`Olá! Tenho interesse no "${it.n}" que vi no site 🌷`)}">Pedir ${arrow}</a></div></div>
-  </article>`).join("");
+const esc = (v) => String(v ?? "").replace(/[&<>"']/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[ch]);
+function renderCatalog(items) {
+  grid.innerHTML = items.map((it, i) => {
+    const msg = wa(`Olá! Tenho interesse no "${it.n}" que vi no site 🌷`);
+    return `
+  <article class="card rv in ${i % 3 ? "d" + (i % 3) : ""}" data-c="${esc(it.c)}" data-novo="${it.novo ? 1 : 0}">
+    <div class="ph"><img src="${esc(it.img)}" alt="${esc(it.n)}" loading="lazy">${it.novo ? '<span class="tag tag-new">Novidade</span>' : it.t ? `<span class="tag">${esc(it.t)}</span>` : ""}
+      <div class="quick"><a class="btn btn-rose" target="_blank" rel="noopener" href="${msg}">Pedir pelo WhatsApp</a></div></div>
+    <div class="body"><h3>${esc(it.n)}</h3><p>${esc(it.d)}</p>
+      <div class="row"><span>${esc(it.p) || "Sob encomenda"}</span><a target="_blank" rel="noopener" href="${msg}">Pedir ${arrow}</a></div></div>
+  </article>`;
+  }).join("");
+  document.getElementById("chip-novo").hidden = !items.some((it) => it.novo);
+}
+fetch("catalogo.json", { cache: "no-cache" }).then((r) => r.json()).then(renderCatalog).catch(() => {});
 
 document.querySelectorAll(".chip").forEach((b) => b.addEventListener("click", () => {
   document.querySelectorAll(".chip").forEach((x) => x.classList.toggle("on", x === b));
   const f = b.dataset.f;
   grid.querySelectorAll(".card").forEach((card) => {
-    const show = f === "all" || card.dataset.c === f;
+    const show = f === "all" || (f === "novo" ? card.dataset.novo === "1" : card.dataset.c === f);
     card.classList.toggle("hide", !show);
     if (show) { card.animate([{ opacity: 0, transform: "translateY(20px)" }, { opacity: 1, transform: "none" }], { duration: 500, easing: "cubic-bezier(.2,.8,.2,1)" }); }
   });

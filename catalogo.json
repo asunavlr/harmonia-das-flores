@@ -1,0 +1,8 @@
+[
+  { "id": "buque-primavera", "n": "Buquê Primavera", "d": "Gérberas, rosas e flores do campo em embalagem listrada.", "c": "buque", "img": "img/buque-colorido.jpg", "t": "Mais pedido", "p": "", "novo": false },
+  { "id": "rosas-vermelhas", "n": "Rosas Vermelhas", "d": "Rosas nacionais com astromélias e eucalipto.", "c": "rosas", "img": "img/rosas.jpg", "t": "Clássico", "p": "", "novo": false },
+  { "id": "girassol-pelucia", "n": "Girassol + Pelúcia", "d": "Girassóis com pelúcia. Perfeito para surpreender.", "c": "presente", "img": "img/girassol.jpg", "t": "Presente", "p": "", "novo": false },
+  { "id": "orquidea-presente", "n": "Orquídea Presente", "d": "Orquídea em vaso com embalagem e chocolates.", "c": "plantas", "img": "img/orquidea.jpg", "t": "Dura meses", "p": "", "novo": false },
+  { "id": "orquideas-estacao", "n": "Orquídeas da Estação", "d": "Orquídeas e plantas para casa, jardim e escritório.", "c": "plantas", "img": "img/jardim.jpg", "t": "Plantas", "p": "", "novo": false },
+  { "id": "monte-o-seu", "n": "Monte o seu", "d": "Escolha flores, cores e embalagem. A gente monta do seu jeito.", "c": "buque", "img": "img/buque-colorido.jpg", "t": "Personalizado", "p": "", "novo": false }
+]
