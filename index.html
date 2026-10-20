@@ -659,12 +659,33 @@ if (matchMedia("(hover:hover) and (pointer:fine)").matches) {
     b.addEventListener("mousemove", (e) => { const r = b.getBoundingClientRect(); b.style.transform = `translate(${(e.clientX - r.left - r.width / 2) * 0.25}px,${(e.clientY - r.top - r.height / 2) * 0.35}px)`; });
     b.addEventListener("mouseleave", () => (b.style.transform = ""));
   });
+  // Inclinação suave: o alvo segue o mouse e a carta interpola a cada frame,
+  // sem transition CSS reiniciando a cada mousemove (era o que travava).
+  const tilt = new Map();
+  const tick = () => {
+    let alive = false;
+    tilt.forEach((t, card) => {
+      t.x += (t.tx - t.x) * 0.14; t.y += (t.ty - t.y) * 0.14; t.l += (t.tl - t.l) * 0.14;
+      card.style.transform = `perspective(900px) rotateY(${t.x}deg) rotateX(${t.y}deg) translateY(${t.l}px)`;
+      if (Math.abs(t.tx - t.x) + Math.abs(t.ty - t.y) + Math.abs(t.tl - t.l) > 0.02) alive = true;
+      else if (!t.tl) { card.style.transform = ""; tilt.delete(card); }
+    });
+    tilt.running = alive || tilt.size > 0;
+    if (tilt.running) requestAnimationFrame(tick);
+  };
+  const aim = (card, tx, ty, tl) => {
+    const t = tilt.get(card) || { x: 0, y: 0, l: 0 };
+    Object.assign(t, { tx, ty, tl });
+    tilt.set(card, t);
+    card.style.transition = "box-shadow .5s var(--ease)";
+    if (!tilt.running) { tilt.running = true; requestAnimationFrame(tick); }
+  };
   grid.addEventListener("mousemove", (e) => {
     const card = e.target.closest(".card"); if (!card) return;
     const r = card.getBoundingClientRect();
-    card.style.transform = `perspective(900px) rotateY(${((e.clientX - r.left) / r.width - 0.5) * 6}deg) rotateX(${((e.clientY - r.top) / r.height - 0.5) * -6}deg) translateY(-6px)`;
+    aim(card, ((e.clientX - r.left) / r.width - 0.5) * 7, ((e.clientY - r.top) / r.height - 0.5) * -7, -6);
   });
-  grid.addEventListener("mouseout", (e) => { const card = e.target.closest(".card"); if (card && !card.contains(e.relatedTarget)) card.style.transform = ""; });
+  grid.addEventListener("mouseout", (e) => { const card = e.target.closest(".card"); if (card && !card.contains(e.relatedTarget)) aim(card, 0, 0, 0); });
 }
 
 /* pétalas caindo no hero */
