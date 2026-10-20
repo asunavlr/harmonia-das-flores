@@ -106,6 +106,43 @@ section{position:relative}
 .marquee .track span::after{content:"✿";color:var(--rose-2);font-style:normal;font-size:.7em}
 @keyframes mq{to{transform:translateX(-50%)}}
 
+
+/* ficha do produto */
+.card .more{margin-top:10px;font-size:13px;font-weight:600;color:var(--ink-2);text-decoration:underline;text-underline-offset:3px}
+.card{cursor:pointer}
+.sheet{position:fixed;inset:0;z-index:85;display:grid;place-items:center;padding:20px;background:rgba(15,25,20,.55);backdrop-filter:blur(6px);opacity:0;pointer-events:none;transition:opacity .35s}
+.sheet.on{opacity:1;pointer-events:auto}
+.sheet .box{width:100%;max-width:960px;max-height:calc(100vh - 40px);overflow:auto;background:var(--paper);border-radius:28px;display:grid;grid-template-columns:1.05fr 1fr;transform:translateY(24px) scale(.98);transition:transform .5s var(--ease)}
+.sheet.on .box{transform:none}
+.sheet .x{position:absolute;top:16px;right:16px;width:42px;height:42px;border-radius:50%;background:rgba(255,250,244,.95);font-size:20px;z-index:3;box-shadow:0 4px 14px rgba(0,0,0,.12)}
+.sheet .media{position:relative;background:var(--blush);min-height:420px}
+.sheet .media .gal{position:absolute;inset:0;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.sheet .media .gal::-webkit-scrollbar{display:none}
+.sheet .media img{flex:0 0 100%;width:100%;height:100%;object-fit:cover;scroll-snap-align:start}
+.sheet .thumbs{position:absolute;left:14px;right:14px;bottom:14px;display:flex;gap:8px;justify-content:center}
+.sheet .thumbs button{width:46px;height:56px;border-radius:10px;overflow:hidden;border:2px solid transparent;opacity:.75;transition:.3s}
+.sheet .thumbs button.on{border-color:#fff;opacity:1}
+.sheet .thumbs img{width:100%;height:100%;object-fit:cover}
+.sheet .info{padding:36px 32px 28px;display:flex;flex-direction:column}
+.sheet h3{font-family:"Cormorant Garamond";font-weight:600;font-size:clamp(30px,3.4vw,40px);line-height:1.05;margin-top:8px}
+.sheet .desc{color:var(--ink-2);margin-top:10px}
+.sheet dl{display:grid;gap:10px;margin-top:20px;padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.sheet dl div{display:grid;grid-template-columns:110px 1fr;gap:10px;font-size:14px}
+.sheet dt{color:var(--muted);font-weight:600}
+.sheet h4{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:20px 0 10px}
+.sheet .opts{display:flex;flex-wrap:wrap;gap:8px}
+.sheet .opt{padding:9px 15px;border-radius:999px;border:1px solid var(--line);background:#fff;font-size:14px;font-weight:500;transition:.25s}
+.sheet .opt.on{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.sheet .cta{margin-top:auto;padding-top:24px}
+.sheet .cta .btn{width:100%;justify-content:center}
+.sheet .note{font-size:12px;color:var(--muted);text-align:center;margin-top:10px}
+@media (max-width:760px){
+  .sheet{padding:0;place-items:end stretch}
+  .sheet .box{grid-template-columns:1fr;border-radius:24px 24px 0 0;max-height:94vh;transform:translateY(100%)}
+  .sheet .media{min-height:0;aspect-ratio:4/4.2}
+  .sheet .info{padding:24px 20px calc(20px + env(safe-area-inset-bottom))}
+  .sheet .cta{position:sticky;bottom:0;background:linear-gradient(transparent,var(--paper) 30%);padding-top:18px}
+}
 /* catálogo */
 .catalog{padding:130px 0 110px}
 .cat-head{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap}
@@ -538,6 +575,19 @@ footer{background:#14241c;color:rgba(248,242,234,.75);padding:90px 0 30px;overfl
   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .7.5l1 2.3c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l2.2 1c.3.2.5.2.6.4 0 .1 0 .7-.3 1.3Z"/></svg>
 </a>
 
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sh-n"><div class="box" style="position:relative">
+  <button class="x" aria-label="Fechar">×</button>
+  <div class="media"><div class="gal" id="sh-gal"></div><div class="thumbs" id="sh-th"></div></div>
+  <div class="info">
+    <span class="eyebrow" id="sh-c"></span>
+    <h3 id="sh-n"></h3>
+    <p class="desc" id="sh-d"></p>
+    <dl id="sh-dl"></dl>
+    <div id="sh-cores"></div>
+    <div id="sh-extras"></div>
+    <div class="cta"><a class="btn btn-rose" id="sh-wa" target="_blank" rel="noopener">Pedir pelo WhatsApp</a><p class="note">A mensagem já vai com a sua escolha. A gente confirma valor e entrega por lá.</p></div>
+  </div>
+</div></div>
 <div class="lb" id="lb"><button aria-label="Fechar">×</button><img alt=""></div>
 
 <script>
@@ -554,24 +604,18 @@ const arrow = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke
 const grid = document.getElementById("grid");
 const esc = (v) => String(v ?? "").replace(/[&<>"']/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[ch]);
 const pics = (it) => (it.imgs && it.imgs.length ? it.imgs : [it.img]).filter(Boolean);
-// "25", "25,9", "R$ 120" → R$ 25,00 · texto livre ("a combinar") fica como está
-function price(p) {
-  const raw = String(p ?? "").trim();
-  if (!raw) return '<span class="price soft">Sob encomenda</span>';
-  const num = raw.replace(/r\$|\s/gi, "").replace(/\.(?=\d{3}(\D|$))/g, "").replace(",", ".");
-  if (!/^\d+(\.\d+)?$/.test(num)) return `<span class="price soft">${esc(raw)}</span>`;
-  const [r, c] = Number(num).toFixed(2).split(".");
-  return `<span class="price"><small>a partir de</small><b><i>R$</i>${Number(r).toLocaleString("pt-BR")},${c}</b></span>`;
-}
+const avail = (it) => `<span class="price soft">${esc(it.prazo || "Sob encomenda")}</span>`;
+let CATALOG = [];
 function renderCatalog(items) {
+  CATALOG = items;
   grid.innerHTML = items.map((it, i) => {
     const msg = wa(`Olá! Tenho interesse no "${it.n}" que vi no site 🌷`);
     return `
-  <article class="card rv in ${i % 3 ? "d" + (i % 3) : ""}" data-c="${esc(it.c)}" data-novo="${it.novo ? 1 : 0}">
+  <article tabindex="0" data-i="${i}" class="card rv in ${i % 3 ? "d" + (i % 3) : ""}" data-c="${esc(it.c)}" data-novo="${it.novo ? 1 : 0}">
     <div class="ph"><div class="gal">${pics(it).map((src, k) => `<img src="${esc(src)}" alt="${esc(it.n)}${k ? " · foto " + (k + 1) : ""}" loading="lazy">`).join("")}</div>${pics(it).length > 1 ? `<div class="dots">${pics(it).map((_, k) => `<i class="${k ? "" : "on"}"></i>`).join("")}</div><button class="nav-ph prev" aria-label="Foto anterior">${arrow}</button><button class="nav-ph next" aria-label="Próxima foto">${arrow}</button>` : ""}${it.novo ? '<span class="tag tag-new">Novidade</span>' : it.t ? `<span class="tag">${esc(it.t)}</span>` : ""}
       <div class="quick"><a class="btn btn-rose" target="_blank" rel="noopener" href="${msg}">Pedir pelo WhatsApp</a></div></div>
-    <div class="body"><h3>${esc(it.n)}</h3><p>${esc(it.d)}</p>
-      <div class="row">${price(it.p)}<a target="_blank" rel="noopener" href="${msg}">Pedir ${arrow}</a></div></div>
+    <div class="body"><h3>${esc(it.n)}</h3><p>${esc(it.d)}</p>${it.flores || it.cores?.length || it.extras?.length ? '<button class="more">Ver detalhes</button>' : ""}
+      <div class="row">${avail(it)}<a target="_blank" rel="noopener" href="${msg}">Pedir ${arrow}</a></div></div>
   </article>`;
   }).join("");
   grid.querySelectorAll(".nav-ph").forEach((b) => b.addEventListener("click", () => {
@@ -584,6 +628,63 @@ function renderCatalog(items) {
   }, { passive: true }));
   document.getElementById("chip-novo").hidden = !items.some((it) => it.novo);
 }
+
+/* ficha do produto */
+const CATN = { buque: "Buquês", rosas: "Rosas", plantas: "Orquídeas e plantas", presente: "Presentes" };
+const sheet = document.getElementById("sheet");
+const $s = (id) => document.getElementById(id);
+let pick = { cor: "", extras: new Set() }, cur = null;
+function waSheet() {
+  let m = `Olá! Quero encomendar o "${cur.n}" que vi no site 🌷`;
+  if (pick.cor) m += `\nCor: ${pick.cor}`;
+  if (pick.extras.size) m += `\nAdicionar: ${[...pick.extras].join(", ")}`;
+  $s("sh-wa").href = wa(m);
+}
+function openSheet(it) {
+  cur = it; pick = { cor: "", extras: new Set() };
+  const ps = pics(it);
+  $s("sh-gal").innerHTML = ps.map((p) => `<img src="${esc(p)}" alt="${esc(it.n)}">`).join("");
+  $s("sh-th").innerHTML = ps.length > 1 ? ps.map((p, k) => `<button class="${k ? "" : "on"}" data-k="${k}" aria-label="Foto ${k + 1}"><img src="${esc(p)}" alt=""></button>`).join("") : "";
+  $s("sh-c").textContent = CATN[it.c] || "";
+  $s("sh-n").textContent = it.n;
+  $s("sh-d").textContent = it.d || "";
+  const rows = [["O que vem", it.flores], ["Tamanho", it.tam], ["Duração", it.dura], ["Disponível", it.prazo || "Sob encomenda"], ["Cuidados", it.cuid]].filter(([, v]) => v);
+  $s("sh-dl").innerHTML = rows.map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join("");
+  $s("sh-cores").innerHTML = it.cores?.length ? `<h4>Escolha a cor</h4><div class="opts" data-g="cor">${it.cores.map((c) => `<button class="opt">${esc(c)}</button>`).join("")}</div>` : "";
+  $s("sh-extras").innerHTML = it.extras?.length ? `<h4>Quer adicionar?</h4><div class="opts" data-g="extras">${it.extras.map((c) => `<button class="opt">+ ${esc(c)}</button>`).join("")}</div>` : "";
+  waSheet();
+  $s("sh-gal").scrollLeft = 0;
+  sheet.classList.add("on");
+  document.body.style.overflow = "hidden";
+}
+function closeSheet() { sheet.classList.remove("on"); document.body.style.overflow = ""; }
+sheet.addEventListener("click", (e) => {
+  if (e.target === sheet || e.target.closest(".x")) return closeSheet();
+  const th = e.target.closest(".thumbs button");
+  if (th) { const g = $s("sh-gal"); g.scrollTo({ left: +th.dataset.k * g.clientWidth, behavior: "smooth" }); return; }
+  const o = e.target.closest(".opt"); if (!o) return;
+  const g = o.parentElement.dataset.g, v = o.textContent.replace(/^\+ /, "");
+  if (g === "cor") {
+    pick.cor = pick.cor === v ? "" : v;
+    o.parentElement.querySelectorAll(".opt").forEach((x) => x.classList.toggle("on", x === o && !!pick.cor));
+  } else {
+    pick.extras.has(v) ? pick.extras.delete(v) : pick.extras.add(v);
+    o.classList.toggle("on", pick.extras.has(v));
+  }
+  waSheet();
+});
+$s("sh-gal").addEventListener("scroll", (e) => {
+  const k = Math.round(e.target.scrollLeft / e.target.clientWidth);
+  $s("sh-th").querySelectorAll("button").forEach((b, j) => b.classList.toggle("on", j === k));
+}, { passive: true });
+addEventListener("keydown", (e) => e.key === "Escape" && closeSheet());
+grid.addEventListener("click", (e) => {
+  if (e.target.closest("a, .nav-ph")) return;
+  const card = e.target.closest(".card"); if (card) openSheet(CATALOG[+card.dataset.i]);
+});
+grid.addEventListener("keydown", (e) => {
+  if (e.key === "Enter" && e.target.classList.contains("card")) openSheet(CATALOG[+e.target.dataset.i]);
+});
 fetch("catalogo.json", { cache: "no-cache" }).then((r) => r.json()).then(renderCatalog).catch(() => {});
 
 document.querySelectorAll(".chip").forEach((b) => b.addEventListener("click", () => {

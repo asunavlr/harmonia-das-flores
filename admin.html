@@ -133,10 +133,35 @@ dialog::backdrop{background:rgba(29,51,40,.5)}
         </select>
       </div>
       <div>
-        <label for="fp">Preço a partir de</label>
-        <div class="money"><span>R$</span><input id="fp" inputmode="decimal" placeholder="120,00"></div>
+        <label for="fprazo">Disponibilidade</label>
+        <select id="fprazo">
+          <option value="">Sob encomenda</option>
+          <option>Pronta entrega</option>
+          <option>Encomendar com 1 dia</option>
+          <option>Encomendar com 2 dias</option>
+        </select>
       </div>
     </div>
+    <label for="fflores">O que vem (flores e itens)</label>
+    <input id="fflores" placeholder="Ex.: 12 rosas, eucalipto, papel kraft e laço">
+    <div class="two">
+      <div>
+        <label for="ftam">Tamanho</label>
+        <input id="ftam" placeholder="Ex.: Médio · 45 cm">
+      </div>
+      <div>
+        <label for="fdura">Dura quanto tempo</label>
+        <input id="fdura" placeholder="Ex.: 5 a 7 dias">
+      </div>
+    </div>
+    <label for="fcores">Cores disponíveis</label>
+    <input id="fcores" placeholder="Ex.: Vermelho, Rosa, Branco">
+    <div class="hint">Separe por vírgula. O cliente escolhe a cor no site.</div>
+    <label for="fextras">Pode adicionar</label>
+    <input id="fextras" placeholder="Ex.: Chocolate, Pelúcia, Cartão, Balão">
+    <div class="hint">Separe por vírgula. O cliente marca o que quer junto.</div>
+    <label for="fcuid">Cuidados (opcional)</label>
+    <input id="fcuid" placeholder="Ex.: Trocar a água a cada 2 dias">
     <label for="ft">Etiqueta (opcional)</label>
     <input id="ft" placeholder="Ex.: Mais pedido">
     <label class="check"><input type="checkbox" id="fnovo"> Mostrar como Novidade</label>
@@ -188,6 +213,7 @@ async function start() {
   render();
 }
 
+const csv = (id) => $(id).value.split(",").map((v) => v.trim()).filter(Boolean);
 const list = (it) => (it.imgs && it.imgs.length ? it.imgs : [it.img]).filter(Boolean);
 const cover = (it) => list(it)[0];
 const src = (p) => p.startsWith("data:") ? p : previews[p] || "/" + p;
@@ -211,7 +237,7 @@ function render() {
       <img src="${esc(src(cover(it)))}" alt="">
       <div>
         <h3>${esc(it.n)}${it.novo ? '<span class="badge">Novidade</span>' : ""}</h3>
-        <div class="meta">${CAT[it.c] || it.c}${it.p ? " · R$ " + esc(it.p) : ""} · ${list(it).length} foto${list(it).length > 1 ? "s" : ""}</div>
+        <div class="meta">${CAT[it.c] || it.c}${it.prazo ? " · " + esc(it.prazo) : ""} · ${list(it).length} foto${list(it).length > 1 ? "s" : ""}</div>
       </div>
       <div class="acts">
         <button class="ico" data-a="edit" data-i="${i}" title="Editar">✎</button>
@@ -233,7 +259,7 @@ function openForm(i) {
   editing = i;
   const it = items[i] || { n: "", d: "", c: "buque", p: "", t: "", novo: true };
   $("formTitle").textContent = i < 0 ? "Nova flor" : "Editar flor";
-  $("fn").value = it.n; $("fd").value = it.d; $("fc").value = it.c; $("fp").value = String(it.p || "").replace(/^\s*R\$\s*/i, ""); $("ft").value = it.t || ""; $("fnovo").checked = !!it.novo;
+  $("fn").value = it.n; $("fd").value = it.d; $("fc").value = it.c; $("fprazo").value = it.prazo || ""; $("fflores").value = it.flores || ""; $("ftam").value = it.tam || ""; $("fdura").value = it.dura || ""; $("fcores").value = (it.cores || []).join(", "); $("fextras").value = (it.extras || []).join(", "); $("fcuid").value = it.cuid || ""; $("ft").value = it.t || ""; $("fnovo").checked = !!it.novo;
   photos = i < 0 ? [] : list(it).slice();
   renderPics();
   $("file").value = "";
@@ -280,7 +306,7 @@ $("form").addEventListener("submit", (e) => {
     previews[path] = p;
     return path;
   });
-  const it = { id, n, d: $("fd").value.trim(), c: $("fc").value, img: imgs[0], imgs, t: $("ft").value.trim(), p: $("fp").value.trim().replace(/^R\$\s*/i, ""), novo: $("fnovo").checked };
+  const it = { id, n, d: $("fd").value.trim(), c: $("fc").value, img: imgs[0], imgs, t: $("ft").value.trim(), prazo: $("fprazo").value, flores: $("fflores").value.trim(), tam: $("ftam").value.trim(), dura: $("fdura").value.trim(), cores: csv("fcores"), extras: csv("fextras"), cuid: $("fcuid").value.trim(), novo: $("fnovo").checked };
   if (cur) items[editing] = it; else items.unshift(it);
   $("dlg").close(); render(); dirty();
 });
