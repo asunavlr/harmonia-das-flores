@@ -1,5 +1,203 @@
 [
   {
+    "id": "cesta-eu-te-amo",
+    "n": "Cesta Eu Te Amo",
+    "d": "Cesta com chocolates, mimos e balão de coração. Ideal pra surpreender.",
+    "c": "cestas",
+    "img": "img/cat/cesta-eu-te-amo.jpg",
+    "imgs": [
+      "img/cat/cesta-eu-te-amo.jpg"
+    ],
+    "t": "Romântico",
+    "novo": true,
+    "prazo": "",
+    "flores": "Chocolates, mimos e balão metalizado",
+    "tam": "",
+    "dura": "",
+    "cores": [],
+    "extras": [
+      "Cartão",
+      "Pelúcia",
+      "Flores"
+    ],
+    "cuid": ""
+  },
+  {
+    "id": "buque-girassois",
+    "n": "Buquê de Girassóis",
+    "d": "Girassóis com flores do campo e tela dourada. Alegria em forma de flor.",
+    "c": "buque",
+    "img": "img/cat/buque-girassois.jpg",
+    "imgs": [
+      "img/cat/buque-girassois.jpg"
+    ],
+    "t": "",
+    "novo": true,
+    "prazo": "",
+    "flores": "Girassóis, flores brancas e embalagem dourada",
+    "tam": "",
+    "dura": "",
+    "cores": [],
+    "extras": [
+      "Chocolate",
+      "Cartão"
+    ],
+    "cuid": ""
+  },
+  {
+    "id": "girassol-vinho",
+    "n": "Arranjo Girassol com Vinho",
+    "d": "Rosas brancas, girassol e vinho em caixa de madeira.",
+    "c": "presente",
+    "img": "img/cat/girassol-vinho.jpg",
+    "imgs": [
+      "img/cat/girassol-vinho.jpg"
+    ],
+    "t": "Presente",
+    "novo": true,
+    "prazo": "",
+    "flores": "Rosas brancas, girassol, vinho e cachepô de madeira",
+    "tam": "",
+    "dura": "",
+    "cores": [],
+    "extras": [
+      "Cartão",
+      "Chocolate"
+    ],
+    "cuid": ""
+  },
+  {
+    "id": "ramalhete-rosas",
+    "n": "Ramalhete Rosa",
+    "d": "Rosas cor-de-rosa com astromélias e folhagens.",
+    "c": "rosas",
+    "img": "img/cat/ramalhete-rosas.jpg",
+    "imgs": [
+      "img/cat/ramalhete-rosas.jpg"
+    ],
+    "t": "",
+    "novo": false,
+    "prazo": "",
+    "flores": "Rosas, astromélias e folhagens",
+    "tam": "",
+    "dura": "",
+    "cores": [],
+    "extras": [
+      "Chocolate",
+      "Cartão",
+      "Pelúcia"
+    ],
+    "cuid": ""
+  },
+  {
+    "id": "rosas-champanhe",
+    "n": "Ramalhete Champanhe",
+    "d": "Rosas champanhe com astromélias laranja. Elegante e marcante.",
+    "c": "rosas",
+    "img": "img/cat/rosas-champanhe.jpg",
+    "imgs": [
+      "img/cat/rosas-champanhe.jpg"
+    ],
+    "t": "",
+    "novo": false,
+    "prazo": "",
+    "flores": "Rosas champanhe, astromélias e eucalipto",
+    "tam": "",
+    "dura": "",
+    "cores": [],
+    "extras": [
+      "Chocolate",
+      "Cartão"
+    ],
+    "cuid": ""
+  },
+  {
+    "id": "lirios-amarelos",
+    "n": "Buquê de Lírios",
+    "d": "Lírios amarelos com rosas brancas e juta.",
+    "c": "buque",
+    "img": "img/cat/lirios-amarelos.jpg",
+    "imgs": [
+      "img/cat/lirios-amarelos.jpg"
+    ],
+    "t": "",
+    "novo": false,
+    "prazo": "",
+    "flores": "Lírios, rosas brancas e embalagem de juta",
+    "tam": "",
+    "dura": "",
+    "cores": [],
+    "extras": [
+      "Chocolate",
+      "Cartão"
+    ],
+    "cuid": ""
+  },
+  {
+    "id": "orquidea-branca",
+    "n": "Orquídea Branca",
+    "d": "Phalaenopsis branca em cachepô rústico. Dura meses.",
+    "c": "plantas",
+    "img": "img/cat/orquidea-branca.jpg",
+    "imgs": [
+      "img/cat/orquidea-branca.jpg"
+    ],
+    "t": "Dura meses",
+    "novo": false,
+    "prazo": "",
+    "flores": "Orquídea phalaenopsis e cachepô",
+    "tam": "",
+    "dura": "",
+    "cores": [],
+    "extras": [
+      "Cartão",
+      "Chocolate"
+    ],
+    "cuid": ""
+  },
+  {
+    "id": "orquideas-madeira",
+    "n": "Jardim de Orquídeas",
+    "d": "Orquídeas coloridas e bromélia em cachepô de madeira.",
+    "c": "plantas",
+    "img": "img/cat/orquideas-madeira.jpg",
+    "imgs": [
+      "img/cat/orquideas-madeira.jpg"
+    ],
+    "t": "",
+    "novo": false,
+    "prazo": "",
+    "flores": "Orquídeas, bromélia e cachepô de madeira",
+    "tam": "",
+    "dura": "",
+    "cores": [],
+    "extras": [
+      "Cartão"
+    ],
+    "cuid": ""
+  },
+  {
+    "id": "orquideas-vaso",
+    "n": "Orquídeas no Vaso",
+    "d": "Mix de orquídeas em vaso rústico amarelo.",
+    "c": "plantas",
+    "img": "img/cat/orquideas-vaso.jpg",
+    "imgs": [
+      "img/cat/orquideas-vaso.jpg"
+    ],
+    "t": "",
+    "novo": false,
+    "prazo": "",
+    "flores": "Orquídeas variadas e vaso decorativo",
+    "tam": "",
+    "dura": "",
+    "cores": [],
+    "extras": [
+      "Cartão"
+    ],
+    "cuid": ""
+  },
+  {
     "id": "buque-primavera",
     "n": "Buquê Primavera",
     "d": "Gérberas, rosas e flores do campo em embalagem listrada.",

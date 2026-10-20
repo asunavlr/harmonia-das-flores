@@ -411,8 +411,8 @@ footer{background:#14241c;color:rgba(248,242,234,.75);padding:90px 0 30px;overfl
 
 <div class="marquee" aria-hidden="true">
   <div class="track">
-    <span>Buquês</span><span>Rosas</span><span>Orquídeas</span><span>Cestas de presente</span><span>Arranjos</span><span>Casamentos</span><span>Datas especiais</span>
-    <span>Buquês</span><span>Rosas</span><span>Orquídeas</span><span>Cestas de presente</span><span>Arranjos</span><span>Casamentos</span><span>Datas especiais</span>
+    <span>Buquês</span><span>Rosas</span><span>Orquídeas</span><span>Cestas de café da manhã</span><span>Arranjos</span><span>Ramalhetes</span><span>Coroas fúnebres</span><span>Datas especiais</span>
+    <span>Buquês</span><span>Rosas</span><span>Orquídeas</span><span>Cestas de café da manhã</span><span>Arranjos</span><span>Ramalhetes</span><span>Coroas fúnebres</span><span>Datas especiais</span>
   </div>
 </div>
 
@@ -432,6 +432,7 @@ footer{background:#14241c;color:rgba(248,242,234,.75);padding:90px 0 30px;overfl
       <button class="chip" data-f="rosas">Rosas</button>
       <button class="chip" data-f="plantas">Orquídeas e plantas</button>
       <button class="chip" data-f="presente">Presentes</button>
+      <button class="chip" data-f="cestas">Cestas</button>
     </div>
     <div class="grid" id="grid"></div>
   </div>
@@ -448,8 +449,8 @@ footer{background:#14241c;color:rgba(248,242,234,.75);padding:90px 0 30px;overfl
       <div class="occ rv d1"><i>❤️</i><b>Amor</b><small>Rosas e declarações</small></div>
       <div class="occ rv d2"><i>👶</i><b>Nascimento</b><small>Delicados e suaves</small></div>
       <div class="occ rv"><i>💍</i><b>Casamento</b><small>Buquê e decoração</small></div>
-      <div class="occ rv d1"><i>🎓</i><b>Formatura</b><small>Para celebrar conquistas</small></div>
-      <div class="occ rv d2"><i>🕊️</i><b>Condolências</b><small>Coroas e arranjos</small></div>
+      <div class="occ rv d1"><i>🧺</i><b>Café da manhã</b><small>Cestas montadas com carinho</small></div>
+      <div class="occ rv d2"><i>🕊️</i><b>Condolências</b><small>Coroas fúnebres e arranjos</small></div>
     </div>
   </div>
 </section>
@@ -461,7 +462,7 @@ footer{background:#14241c;color:rgba(248,242,234,.75);padding:90px 0 30px;overfl
     <div class="steps">
       <div class="step rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.6-7 10-7 10Z"/></svg></div><h3>Escolha</h3><p>Navegue pelo catálogo ou mande uma foto de referência. Montamos do seu jeito.</p></div>
       <div class="step rv d1"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.9A8 8 0 1 1 21 12Z"/></svg></div><h3>Fale com a gente</h3><p>Pelo WhatsApp ou direct do Instagram. Combine data, horário e o recado do cartão.</p></div>
-      <div class="step rv d2"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg></div><h3>Receba ou retire</h3><p>Entregamos em Pomerode e região, ou você retira na loja no Centro.</p></div>
+      <div class="step rv d2"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg></div><h3>Levamos até você</h3><p>Faça sua encomenda que a gente entrega em Pomerode e região. Ou retire na loja, no Centro.</p></div>
     </div>
   </div>
 </section>
@@ -630,7 +631,7 @@ function renderCatalog(items) {
 }
 
 /* ficha do produto */
-const CATN = { buque: "Buquês", rosas: "Rosas", plantas: "Orquídeas e plantas", presente: "Presentes" };
+const CATN = { buque: "Buquês", rosas: "Rosas", plantas: "Orquídeas e plantas", presente: "Presentes", cestas: "Cestas" };
 const sheet = document.getElementById("sheet");
 const $s = (id) => document.getElementById(id);
 let pick = { cor: "", extras: new Set() }, cur = null;
