@@ -274,20 +274,33 @@ section{position:relative}
 .cta-box .btn-ghost{color:var(--ink)}
 
 /* footer */
-footer{background:#14241c;color:rgba(248,242,234,.75);padding:90px 0 30px;overflow:hidden}
-.f-big{font-family:"Great Vibes";font-size:clamp(70px,15vw,220px);line-height:.9;color:transparent;-webkit-text-stroke:1px rgba(233,163,177,.45);white-space:nowrap;margin-bottom:60px;text-align:center}
-.f-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
-.f-grid h4{color:var(--cream);font-size:12px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:16px}
-.f-grid a,.f-grid p{display:block;font-size:14px;margin-bottom:10px;transition:color .3s}
-.f-grid a:hover{color:var(--rose-2)}
+footer{background:#14241c;color:rgba(248,242,234,.72);padding:90px 0 0;overflow:hidden;position:relative}
+footer::before{content:"";position:absolute;width:700px;height:700px;right:-200px;top:-300px;background:radial-gradient(closest-side,rgba(196,80,106,.22),transparent);pointer-events:none}
+.f-top{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;padding-bottom:56px;border-bottom:1px solid rgba(255,255,255,.1);position:relative}
+.f-top h2{font-family:"Cormorant Garamond";font-weight:500;color:var(--cream);font-size:clamp(34px,4.4vw,58px);line-height:1.02;max-width:620px;margin-top:14px}
+.f-top h2 em{color:var(--rose-2)}
+.f-cta{display:flex;gap:12px;flex-wrap:wrap}
+.f-cta svg{width:18px}
+.f-ghost{border:1px solid rgba(255,255,255,.22);color:var(--cream)}
+.f-ghost:hover{background:rgba(255,255,255,.08)}
+.f-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.4fr;gap:40px;padding-top:56px;position:relative}
+.f-grid h4{color:var(--cream);font-size:12px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:18px}
+.f-grid a,.f-grid p{display:block;font-size:14.5px;margin-bottom:11px;transition:color .3s,transform .3s}
+.f-grid a:hover{color:var(--rose-2);transform:translateX(3px)}
+.f-brand p{max-width:320px;margin-top:18px;line-height:1.7}
 .f-grid .logo b{color:var(--cream)}
+.f-grid .logo:hover{transform:none}
 .f-grid .logo .mark{background:transparent;border-color:rgba(255,255,255,.3)}
-.socials{display:flex;gap:10px;margin-top:20px}
-.socials a{width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.18);display:grid;place-items:center;margin:0}
-.socials a:hover{background:var(--rose);border-color:var(--rose);color:#fff}
-.socials svg{width:18px}
-.f-bot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:60px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);font-size:13px}
+.f-badge{display:inline-flex;gap:12px;align-items:center;margin-top:8px;padding:12px 16px;border-radius:16px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);font-size:13px}
+.f-badge svg{width:26px;color:var(--rose-2);flex-shrink:0}
+.f-badge b{display:block;color:var(--cream);font-size:14px}
+.f-line{display:flex!important;gap:12px;align-items:flex-start}
+.f-line svg{width:18px;flex-shrink:0;margin-top:2px;color:var(--rose-2)}
+.f-line span{word-break:break-word}
+.f-bot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:50px;padding:22px 0;border-top:1px solid rgba(255,255,255,.1);font-size:13px;position:relative}
 .f-bot a:hover{color:var(--rose-2)}
+.f-bot b{color:var(--cream)}
+.f-big{font-family:"Great Vibes";font-size:15.5vw;line-height:.8;white-space:nowrap;text-align:center;margin-bottom:-3.2vw;padding-top:10px;background:linear-gradient(180deg,rgba(233,163,177,.38),rgba(233,163,177,0) 85%);-webkit-background-clip:text;background-clip:text;color:transparent;user-select:none;pointer-events:none}
 
 /* whatsapp */
 .fab{position:fixed;right:20px;bottom:20px;z-index:40;width:60px;height:60px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;box-shadow:0 14px 30px -10px rgba(37,211,102,.7);transition:transform .3s var(--ease)}
@@ -338,7 +351,12 @@ footer{background:#14241c;color:rgba(248,242,234,.75);padding:90px 0 30px;overfl
   .occ-list{grid-template-columns:1fr 1fr}
   .rcard{width:280px}
   .rcard p{font-size:19px}
-  .f-grid{grid-template-columns:1fr}
+  .f-grid{grid-template-columns:1fr 1fr;gap:32px 20px}
+  .f-brand{grid-column:1/-1}
+  .f-grid > div:last-child{grid-column:1/-1}
+  .f-cta,.f-cta .btn{width:100%}
+  .f-bot{flex-direction:column;align-items:flex-start}
+  .f-up{display:none}
   .catalog,.how,.reviews,.visit{padding:90px 0}
   .gallery,.cta{padding-bottom:90px}
 }
@@ -540,38 +558,45 @@ footer{background:#14241c;color:rgba(248,242,234,.75);padding:90px 0 30px;overfl
 </section>
 
 <footer>
-  <div class="f-big" aria-hidden="true">Harmonia das Flores</div>
   <div class="wrap">
-    <div class="f-grid">
+    <div class="f-top">
       <div>
+        <span class="eyebrow">Harmonia das Flores</span>
+        <h2>Transformando cada ocasião em um <em>momento especial</em></h2>
+      </div>
+      <div class="f-cta">
+        <a class="btn btn-rose wa" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.9A8 8 0 1 1 21 12Z"/></svg> Encomendar pelo WhatsApp</a>
+        <a class="btn f-ghost" href="tel:+554733874964"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg> (47) 3387-4964</a>
+      </div>
+    </div>
+    <div class="f-grid">
+      <div class="f-brand">
         <a href="#" class="logo"><span class="mark">H</span><span><b>Harmonia das Flores</b><small>Floricultura · Pomerode</small></span></a>
-        <p style="margin-top:18px;max-width:300px">Flores frescas, arranjos feitos à mão e presentes para todos os momentos.</p>
-        <div class="socials">
-          <a href="https://instagram.com/harmoniadasfloresfloricultura" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
-          <a class="wa" href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.9A8 8 0 1 1 21 12Z"/></svg></a>
-          <a href="tel:+554733874964" aria-label="Telefone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></a>
-        </div>
+        <p>Flores frescas, arranjos feitos à mão, cestas de café da manhã e coroas. Tudo montado na hora.</p>
+        <div class="f-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg><span><b>Levamos até você</b>Entregas em Pomerode e região</span></div>
       </div>
       <div>
         <h4>Navegue</h4>
-        <a href="#catalogo">Catálogo</a><a href="#ocasioes">Ocasiões</a><a href="#como-pedir">Como pedir</a><a href="#feedbacks">Feedbacks</a>
+        <a href="#catalogo">Catálogo</a><a href="#ocasioes">Ocasiões</a><a href="#como-pedir">Como pedir</a><a href="#feedbacks">Feedbacks</a><a href="#loja">A loja</a>
       </div>
       <div>
         <h4>Catálogo</h4>
-        <a href="#catalogo">Buquês</a><a href="#catalogo">Rosas</a><a href="#catalogo">Orquídeas</a><a href="#catalogo">Presentes</a>
+        <a href="#catalogo" data-go="buque">Buquês</a><a href="#catalogo" data-go="rosas">Rosas</a><a href="#catalogo" data-go="plantas">Orquídeas</a><a href="#catalogo" data-go="presente">Presentes</a><a href="#catalogo" data-go="cestas">Cestas</a>
       </div>
       <div>
-        <h4>Contato</h4>
-        <a class="wa" href="#">WhatsApp (47) 99907-1466</a>
-        <a href="tel:+554733874964">(47) 3387-4964</a>
-        <p>Rua XV de Novembro, 1353<br>Centro · Pomerode – SC</p>
+        <h4>Visite a loja</h4>
+        <a class="f-line" href="https://www.google.com/maps/search/?api=1&query=Rua+XV+de+Novembro+1353+Pomerode+SC" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Rua XV de Novembro, 1353<br>Centro · Pomerode – SC</span></a>
+        <a class="f-line wa" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.9A8 8 0 1 1 21 12Z"/></svg><span>(47) 99907-1466</span></a>
+        <a class="f-line" href="https://instagram.com/harmoniadasfloresfloricultura" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg><span>@harmoniadasfloresfloricultura</span></a>
       </div>
     </div>
     <div class="f-bot">
-      <span>© <span id="yr"></span> Harmonia das Flores. Todos os direitos reservados.</span>
-      <a href="https://comply.website" target="_blank" rel="noopener">Site por Comply</a>
+      <span>© <span id="yr"></span> Harmonia das Flores · Pomerode, SC</span>
+      <a href="#" class="f-up">Voltar ao topo ↑</a>
+      <a href="https://comply.website" target="_blank" rel="noopener">Site por <b>Comply</b></a>
     </div>
   </div>
+  <div class="f-big" aria-hidden="true">Harmonia das Flores</div>
 </footer>
 
 <a class="fab wa" data-msg="Olá! Vim pelo site e quero fazer uma encomenda 🌷" href="#" aria-label="Falar no WhatsApp">
@@ -688,6 +713,9 @@ grid.addEventListener("click", (e) => {
 grid.addEventListener("keydown", (e) => {
   if (e.key === "Enter" && e.target.classList.contains("card")) openSheet(CATALOG[+e.target.dataset.i]);
 });
+document.querySelectorAll("[data-go]").forEach((a) => a.addEventListener("click", () => {
+  document.querySelector(`.chip[data-f="${a.dataset.go}"]`)?.click();
+}));
 fetch("catalogo.json", { cache: "no-cache" }).then((r) => r.json()).then(renderCatalog).catch(() => {});
 
 document.querySelectorAll(".chip").forEach((b) => b.addEventListener("click", () => {
