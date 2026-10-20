@@ -62,8 +62,18 @@ dialog::backdrop{background:rgba(29,51,40,.5)}
 @media (min-width:640px){dialog{border-radius:24px;margin:auto}}
 .form{padding:22px 20px 24px}
 .form h2{font-family:"Cormorant Garamond";font-size:28px}
-.photo{margin-top:14px;aspect-ratio:4/5;max-height:300px;width:100%;border:2px dashed var(--line);border-radius:16px;display:grid;place-items:center;overflow:hidden;background:#fff;color:var(--muted);font-size:14px;text-align:center;position:relative}
-.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pics{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}
+.pic{position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;background:var(--blush)}
+.pic img{width:100%;height:100%;object-fit:cover}
+.pic .cover{position:absolute;left:6px;top:6px;background:var(--ink);color:#fff;font-size:10px;font-weight:700;padding:2px 7px;border-radius:999px}
+.pic .x{position:absolute;right:6px;top:6px;width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.95);font-size:14px;line-height:26px;text-align:center}
+.pic .mv{position:absolute;left:6px;bottom:6px;width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.95);font-size:13px}
+.addpic{aspect-ratio:4/5;border:2px dashed var(--line);border-radius:12px;display:grid;place-items:center;text-align:center;color:var(--muted);font-size:13px;background:#fff;cursor:pointer;padding:6px}
+.addpic b{display:block;font-size:24px;color:var(--rose);font-weight:500}
+.hint{font-size:12px;color:var(--muted);margin-top:6px}
+.money{position:relative}
+.money span{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--muted);font-weight:600}
+.money input{padding-left:42px}
 .check{display:flex;align-items:center;gap:10px;margin-top:16px;font-weight:600}
 .check input{width:22px;height:22px;accent-color:var(--rose)}
 .form .row{display:flex;gap:10px;margin-top:22px}
@@ -105,8 +115,9 @@ dialog::backdrop{background:rgba(29,51,40,.5)}
 <dialog id="dlg">
   <form class="form" id="form" method="dialog">
     <h2 id="formTitle">Nova flor</h2>
-    <label class="photo" id="photoBox" for="file"><span>Toque para escolher a foto</span></label>
-    <input type="file" id="file" accept="image/*" hidden>
+    <div class="pics" id="pics"></div>
+    <div class="hint">Até 6 fotos: buquê, detalhe, arranjo pronto… A primeira é a capa.</div>
+    <input type="file" id="file" accept="image/*" multiple hidden>
     <label for="fn">Nome</label>
     <input id="fn" required placeholder="Ex.: Buquê de Rosas Cor-de-rosa">
     <label for="fd">Descrição</label>
@@ -122,8 +133,8 @@ dialog::backdrop{background:rgba(29,51,40,.5)}
         </select>
       </div>
       <div>
-        <label for="fp">Preço (opcional)</label>
-        <input id="fp" placeholder="Ex.: R$ 120">
+        <label for="fp">Preço a partir de</label>
+        <div class="money"><span>R$</span><input id="fp" inputmode="decimal" placeholder="120,00"></div>
       </div>
     </div>
     <label for="ft">Etiqueta (opcional)</label>
@@ -146,7 +157,7 @@ let items = [];
 let uploads = {}; // caminho -> base64
 let previews = {}; // caminho -> dataURL para mostrar antes de publicar
 let editing = -1;
-let pendingPhoto = null;
+let photos = []; // caminhos (img/...) ou dataURL das novas
 
 const esc = (v) => String(v ?? "").replace(/[&<>"']/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[ch]);
 function toast(msg) { const t = $("toast"); t.textContent = msg; t.classList.add("show"); clearTimeout(toast.h); toast.h = setTimeout(() => t.classList.remove("show"), 2600); }
@@ -177,14 +188,30 @@ async function start() {
   render();
 }
 
+const list = (it) => (it.imgs && it.imgs.length ? it.imgs : [it.img]).filter(Boolean);
+const cover = (it) => list(it)[0];
+const src = (p) => p.startsWith("data:") ? p : previews[p] || "/" + p;
+function renderPics() {
+  $("pics").innerHTML = photos.map((p, k) => `
+    <div class="pic"><img src="${esc(src(p))}" alt="">${k ? `<button type="button" class="mv" data-k="${k}" title="Virar capa">★</button>` : '<span class="cover">CAPA</span>'}
+      <button type="button" class="x" data-k="${k}" title="Remover">✕</button></div>`).join("")
+    + (photos.length < 6 ? `<label class="addpic" for="file"><span><b>＋</b>${photos.length ? "Mais fotos" : "Adicionar fotos"}</span></label>` : "");
+}
+$("pics").addEventListener("click", (e) => {
+  const b = e.target.closest("button"); if (!b) return;
+  const k = +b.dataset.k;
+  if (b.classList.contains("x")) photos.splice(k, 1);
+  else photos.unshift(...photos.splice(k, 1));
+  renderPics();
+});
 function render() {
   $("count").textContent = `${items.length} ${items.length === 1 ? "item" : "itens"} no site`;
   $("list").innerHTML = items.length ? items.map((it, i) => `
     <div class="item">
-      <img src="${esc(previews[it.img] || "/" + it.img)}" alt="">
+      <img src="${esc(src(cover(it)))}" alt="">
       <div>
         <h3>${esc(it.n)}${it.novo ? '<span class="badge">Novidade</span>' : ""}</h3>
-        <div class="meta">${CAT[it.c] || it.c}${it.p ? " · " + esc(it.p) : ""}</div>
+        <div class="meta">${CAT[it.c] || it.c}${it.p ? " · R$ " + esc(it.p) : ""} · ${list(it).length} foto${list(it).length > 1 ? "s" : ""}</div>
       </div>
       <div class="acts">
         <button class="ico" data-a="edit" data-i="${i}" title="Editar">✎</button>
@@ -204,11 +231,11 @@ $("list").addEventListener("click", (e) => {
 
 function openForm(i) {
   editing = i;
-  pendingPhoto = null;
   const it = items[i] || { n: "", d: "", c: "buque", p: "", t: "", novo: true };
   $("formTitle").textContent = i < 0 ? "Nova flor" : "Editar flor";
-  $("fn").value = it.n; $("fd").value = it.d; $("fc").value = it.c; $("fp").value = it.p || ""; $("ft").value = it.t || ""; $("fnovo").checked = !!it.novo;
-  $("photoBox").innerHTML = it.img ? `<img src="${esc(previews[it.img] || "/" + it.img)}" alt="">` : "<span>Toque para escolher a foto</span>";
+  $("fn").value = it.n; $("fd").value = it.d; $("fc").value = it.c; $("fp").value = String(it.p || "").replace(/^\s*R\$\s*/i, ""); $("ft").value = it.t || ""; $("fnovo").checked = !!it.novo;
+  photos = i < 0 ? [] : list(it).slice();
+  renderPics();
   $("file").value = "";
   $("dlg").showModal();
 }
@@ -233,26 +260,27 @@ function compress(file) {
 }
 
 $("file").addEventListener("change", async () => {
-  const f = $("file").files[0]; if (!f) return;
-  try {
-    pendingPhoto = await compress(f);
-    $("photoBox").innerHTML = `<img src="${pendingPhoto}" alt="">`;
-  } catch (err) { toast(err.message); }
+  for (const f of [...$("file").files].slice(0, 6 - photos.length)) {
+    try { photos.push(await compress(f)); } catch (err) { toast(err.message); }
+  }
+  $("file").value = "";
+  renderPics();
 });
 
 $("form").addEventListener("submit", (e) => {
   e.preventDefault();
   const cur = items[editing];
-  if (!pendingPhoto && !cur) { toast("Escolha uma foto"); return; }
+  if (!photos.length) { toast("Coloque pelo menos uma foto"); return; }
   const n = $("fn").value.trim();
   const id = cur?.id || n.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") + "-" + Date.now().toString(36);
-  let img = cur?.img;
-  if (pendingPhoto) {
-    img = `img/cat/${id}-${Date.now().toString(36)}.jpg`;
-    uploads[img] = pendingPhoto.split(",")[1];
-    previews[img] = pendingPhoto;
-  }
-  const it = { id, n, d: $("fd").value.trim(), c: $("fc").value, img, t: $("ft").value.trim(), p: $("fp").value.trim(), novo: $("fnovo").checked };
+  const imgs = photos.map((p, k) => {
+    if (!p.startsWith("data:")) return p;
+    const path = `img/cat/${id}-${Date.now().toString(36)}${k}.jpg`;
+    uploads[path] = p.split(",")[1];
+    previews[path] = p;
+    return path;
+  });
+  const it = { id, n, d: $("fd").value.trim(), c: $("fc").value, img: imgs[0], imgs, t: $("ft").value.trim(), p: $("fp").value.trim().replace(/^R\$\s*/i, ""), novo: $("fnovo").checked };
   if (cur) items[editing] = it; else items.unshift(it);
   $("dlg").close(); render(); dirty();
 });
@@ -260,7 +288,7 @@ $("form").addEventListener("submit", (e) => {
 $("save").addEventListener("click", async () => {
   const b = $("save"); b.disabled = true; $("saveMsg").textContent = "Publicando…";
   try {
-    const used = new Set(items.map((it) => it.img));
+    const used = new Set(items.flatMap(list));
     const list = Object.entries(uploads).filter(([p]) => used.has(p)).map(([path, data]) => ({ path, data }));
     await api("POST", { items, uploads: list });
     uploads = {};

@@ -121,6 +121,23 @@ section{position:relative}
 .card .ph img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease)}
 .card:hover .ph img{transform:scale(1.07)}
 .card .tag{position:absolute;left:14px;top:14px;background:rgba(255,250,244,.92);backdrop-filter:blur(6px);padding:6px 12px;border-radius:999px;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.card .gal{position:absolute;inset:0;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.card .gal::-webkit-scrollbar{display:none}
+.card .gal img{flex:0 0 100%;scroll-snap-align:start}
+.card .dots{position:absolute;left:0;right:0;bottom:12px;display:flex;justify-content:center;gap:6px;pointer-events:none;transition:opacity .3s}
+.card .dots i{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.6);box-shadow:0 1px 4px rgba(0,0,0,.25);transition:.3s}
+.card .dots i.on{width:18px;border-radius:4px;background:#fff}
+.card:hover .dots{opacity:0}
+.card .nav-ph{position:absolute;top:50%;width:36px;height:36px;margin-top:-18px;border-radius:50%;background:rgba(255,250,244,.92);display:grid;place-items:center;opacity:0;transition:.3s;z-index:2}
+.card .nav-ph svg{width:16px}
+.card .nav-ph.prev{left:12px}.card .nav-ph.prev svg{transform:rotate(180deg)}
+.card .nav-ph.next{right:12px}
+.card:hover .nav-ph{opacity:1}
+.card .price{display:flex;flex-direction:column;line-height:1.05;color:var(--ink)}
+.card .price small{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.card .price b{font-family:"Cormorant Garamond";font-size:30px;font-weight:600;color:var(--rose)}
+.card .price sup{font-family:Manrope;font-size:12px;font-weight:700;vertical-align:13px;margin:0 2px}
+.card .price.soft{color:var(--rose);font-weight:600}
 .card .tag-new{background:var(--rose);color:#fff}
 .card .quick{position:absolute;left:14px;right:14px;bottom:14px;transform:translateY(calc(100% + 20px));transition:transform .5s var(--ease)}
 .card:hover .quick{transform:none}
@@ -128,8 +145,7 @@ section{position:relative}
 .card .body{padding:18px 20px 22px}
 .card h3{font-family:"Cormorant Garamond";font-weight:600;font-size:26px;line-height:1.1}
 .card p{color:var(--muted);font-size:14px;margin-top:6px}
-.card .row{display:flex;justify-content:space-between;align-items:center;margin-top:14px;font-size:14px}
-.card .row span{color:var(--rose);font-weight:600}
+.card .row{display:flex;justify-content:space-between;align-items:flex-end;margin-top:14px;font-size:14px}
 .card .row a{font-weight:600;display:inline-flex;gap:6px;align-items:center}
 .card .row a svg{width:16px;transition:transform .3s var(--ease)}
 .card .row a:hover svg{transform:translateX(4px)}
@@ -277,6 +293,8 @@ footer{background:#14241c;color:rgba(248,242,234,.75);padding:90px 0 30px;overfl
   .card h3{font-size:20px}
   .card p{display:none}
   .card .row{flex-direction:column;align-items:flex-start;gap:6px;font-size:13px}
+  .card .price b{font-size:24px}
+  .card .nav-ph{display:none}
 .card .quick{display:none}
   .occ-list{grid-template-columns:1fr 1fr}
   .rcard{width:280px}
@@ -535,17 +553,35 @@ document.getElementById("yr").textContent = new Date().getFullYear();
 const arrow = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
 const grid = document.getElementById("grid");
 const esc = (v) => String(v ?? "").replace(/[&<>"']/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[ch]);
+const pics = (it) => (it.imgs && it.imgs.length ? it.imgs : [it.img]).filter(Boolean);
+// "25", "25,9", "R$ 120" → R$ 25,00 · texto livre ("a combinar") fica como está
+function price(p) {
+  const raw = String(p ?? "").trim();
+  if (!raw) return '<span class="price soft">Sob encomenda</span>';
+  const num = raw.replace(/r\$|\s/gi, "").replace(/\.(?=\d{3}(\D|$))/g, "").replace(",", ".");
+  if (!/^\d+(\.\d+)?$/.test(num)) return `<span class="price soft">${esc(raw)}</span>`;
+  const [r, c] = Number(num).toFixed(2).split(".");
+  return `<span class="price"><small>a partir de</small><b><sup>R$</sup>${Number(r).toLocaleString("pt-BR")}<sup>,${c}</sup></b></span>`;
+}
 function renderCatalog(items) {
   grid.innerHTML = items.map((it, i) => {
     const msg = wa(`Olá! Tenho interesse no "${it.n}" que vi no site 🌷`);
     return `
   <article class="card rv in ${i % 3 ? "d" + (i % 3) : ""}" data-c="${esc(it.c)}" data-novo="${it.novo ? 1 : 0}">
-    <div class="ph"><img src="${esc(it.img)}" alt="${esc(it.n)}" loading="lazy">${it.novo ? '<span class="tag tag-new">Novidade</span>' : it.t ? `<span class="tag">${esc(it.t)}</span>` : ""}
+    <div class="ph"><div class="gal">${pics(it).map((src, k) => `<img src="${esc(src)}" alt="${esc(it.n)}${k ? " · foto " + (k + 1) : ""}" loading="lazy">`).join("")}</div>${pics(it).length > 1 ? `<div class="dots">${pics(it).map((_, k) => `<i class="${k ? "" : "on"}"></i>`).join("")}</div><button class="nav-ph prev" aria-label="Foto anterior">${arrow}</button><button class="nav-ph next" aria-label="Próxima foto">${arrow}</button>` : ""}${it.novo ? '<span class="tag tag-new">Novidade</span>' : it.t ? `<span class="tag">${esc(it.t)}</span>` : ""}
       <div class="quick"><a class="btn btn-rose" target="_blank" rel="noopener" href="${msg}">Pedir pelo WhatsApp</a></div></div>
     <div class="body"><h3>${esc(it.n)}</h3><p>${esc(it.d)}</p>
-      <div class="row"><span>${esc(it.p) || "Sob encomenda"}</span><a target="_blank" rel="noopener" href="${msg}">Pedir ${arrow}</a></div></div>
+      <div class="row">${price(it.p)}<a target="_blank" rel="noopener" href="${msg}">Pedir ${arrow}</a></div></div>
   </article>`;
   }).join("");
+  grid.querySelectorAll(".nav-ph").forEach((b) => b.addEventListener("click", () => {
+    const g = b.parentElement.querySelector(".gal");
+    g.scrollBy({ left: (b.classList.contains("next") ? 1 : -1) * g.clientWidth, behavior: "smooth" });
+  }));
+  grid.querySelectorAll(".gal").forEach((g) => g.addEventListener("scroll", () => {
+    const k = Math.round(g.scrollLeft / g.clientWidth);
+    g.parentElement.querySelectorAll(".dots i").forEach((d, j) => d.classList.toggle("on", j === k));
+  }, { passive: true }));
   document.getElementById("chip-novo").hidden = !items.some((it) => it.novo);
 }
 fetch("catalogo.json", { cache: "no-cache" }).then((r) => r.json()).then(renderCatalog).catch(() => {});
