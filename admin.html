@@ -289,8 +289,8 @@ $("save").addEventListener("click", async () => {
   const b = $("save"); b.disabled = true; $("saveMsg").textContent = "Publicando…";
   try {
     const used = new Set(items.flatMap(list));
-    const list = Object.entries(uploads).filter(([p]) => used.has(p)).map(([path, data]) => ({ path, data }));
-    await api("POST", { items, uploads: list });
+    const files = Object.entries(uploads).filter(([p]) => used.has(p)).map(([path, data]) => ({ path, data }));
+    await api("POST", { items, uploads: files });
     uploads = {};
     dirty(false);
     toast("Publicado! Aparece no site em ~1 minuto 🌷");
