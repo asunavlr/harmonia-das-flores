@@ -1,19 +1,5 @@
 [
   {
-    "id": "teste-mvgoo5n9",
-    "n": "Teste",
-    "d": "Teste Teste Teste Teste",
-    "c": "buque",
-    "img": "img/cat/teste-mvgoo5n9-mvgoo5n9.jpg",
-    "imgs": [
-      "img/cat/teste-mvgoo5n9-mvgoo5n9.jpg",
-      "img/cat/teste-mvgoo5n9-mvgox04a1.jpg"
-    ],
-    "t": "Top",
-    "p": "25",
-    "novo": true
-  },
-  {
     "id": "buque-primavera",
     "n": "Buquê Primavera",
     "d": "Gérberas, rosas e flores do campo em embalagem listrada.",
