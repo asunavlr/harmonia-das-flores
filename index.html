@@ -135,8 +135,8 @@ section{position:relative}
 .card:hover .nav-ph{opacity:1}
 .card .price{display:flex;flex-direction:column;line-height:1.05;color:var(--ink)}
 .card .price small{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
-.card .price b{font-family:"Cormorant Garamond";font-size:30px;font-weight:600;color:var(--rose)}
-.card .price sup{font-family:Manrope;font-size:12px;font-weight:700;vertical-align:13px;margin:0 2px}
+.card .price b{font-size:22px;font-weight:700;color:var(--rose);letter-spacing:-.02em;font-variant-numeric:lining-nums tabular-nums;margin-top:4px}
+.card .price b i{font-style:normal;font-size:13px;font-weight:600;margin-right:3px;letter-spacing:0}
 .card .price.soft{color:var(--rose);font-weight:600}
 .card .tag-new{background:var(--rose);color:#fff}
 .card .quick{position:absolute;left:14px;right:14px;bottom:14px;transform:translateY(calc(100% + 20px));transition:transform .5s var(--ease)}
@@ -293,7 +293,7 @@ footer{background:#14241c;color:rgba(248,242,234,.75);padding:90px 0 30px;overfl
   .card h3{font-size:20px}
   .card p{display:none}
   .card .row{flex-direction:column;align-items:flex-start;gap:6px;font-size:13px}
-  .card .price b{font-size:24px}
+  .card .price b{font-size:19px}
   .card .nav-ph{display:none}
 .card .quick{display:none}
   .occ-list{grid-template-columns:1fr 1fr}
@@ -561,7 +561,7 @@ function price(p) {
   const num = raw.replace(/r\$|\s/gi, "").replace(/\.(?=\d{3}(\D|$))/g, "").replace(",", ".");
   if (!/^\d+(\.\d+)?$/.test(num)) return `<span class="price soft">${esc(raw)}</span>`;
   const [r, c] = Number(num).toFixed(2).split(".");
-  return `<span class="price"><small>a partir de</small><b><sup>R$</sup>${Number(r).toLocaleString("pt-BR")}<sup>,${c}</sup></b></span>`;
+  return `<span class="price"><small>a partir de</small><b><i>R$</i>${Number(r).toLocaleString("pt-BR")},${c}</b></span>`;
 }
 function renderCatalog(items) {
   grid.innerHTML = items.map((it, i) => {
