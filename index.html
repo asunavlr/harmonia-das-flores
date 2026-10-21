@@ -110,9 +110,9 @@ section{position:relative}
 /* ficha do produto */
 .card .more{margin-top:10px;font-size:13px;font-weight:600;color:var(--ink-2);text-decoration:underline;text-underline-offset:3px}
 .card{cursor:pointer}
-.sheet{position:fixed;inset:0;z-index:85;display:grid;place-items:center;padding:20px;background:rgba(15,25,20,.55);backdrop-filter:blur(6px);opacity:0;pointer-events:none;transition:opacity .35s}
+.sheet{position:fixed;inset:0;z-index:85;overscroll-behavior:contain;touch-action:none;display:grid;place-items:center;padding:20px;background:rgba(15,25,20,.55);backdrop-filter:blur(6px);opacity:0;pointer-events:none;transition:opacity .35s}
 .sheet.on{opacity:1;pointer-events:auto}
-.sheet .box{width:100%;max-width:960px;max-height:calc(100vh - 40px);overflow:auto;background:var(--paper);border-radius:28px;display:grid;grid-template-columns:1.05fr 1fr;transform:translateY(24px) scale(.98);transition:transform .5s var(--ease)}
+.sheet .box{touch-action:auto;width:100%;max-width:960px;height:min(640px,calc(100vh - 40px));overflow:hidden;background:var(--paper);border-radius:28px;display:grid;grid-template-columns:1.05fr 1fr;transform:translateY(24px) scale(.98);transition:transform .5s var(--ease)}
 .sheet.on .box{transform:none}
 .sheet .x{position:absolute;top:16px;right:16px;width:42px;height:42px;border-radius:50%;background:rgba(255,250,244,.95);font-size:20px;z-index:3;box-shadow:0 4px 14px rgba(0,0,0,.12)}
 .sheet .media{position:relative;background:var(--blush);min-height:420px}
@@ -123,7 +123,7 @@ section{position:relative}
 .sheet .thumbs button{width:46px;height:56px;border-radius:10px;overflow:hidden;border:2px solid transparent;opacity:.75;transition:.3s}
 .sheet .thumbs button.on{border-color:#fff;opacity:1}
 .sheet .thumbs img{width:100%;height:100%;object-fit:cover}
-.sheet .sinfo{padding:36px 32px 28px;display:flex;flex-direction:column}
+.sheet .sinfo{padding:36px 32px 28px;display:flex;flex-direction:column;overflow-y:auto;overscroll-behavior:contain;min-height:0}
 .sheet h3{font-family:"Cormorant Garamond";font-weight:600;font-size:clamp(30px,3.4vw,40px);line-height:1.05;margin-top:8px}
 .sheet .desc{color:var(--ink-2);margin-top:10px}
 .sheet dl{display:grid;gap:10px;margin-top:20px;padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -138,9 +138,9 @@ section{position:relative}
 .sheet .note{font-size:12px;color:var(--muted);text-align:center;margin-top:10px}
 @media (max-width:760px){
   .sheet{padding:0;place-items:end stretch}
-  .sheet .box{grid-template-columns:1fr;border-radius:24px 24px 0 0;max-height:94vh;transform:translateY(100%)}
-  .sheet .media{min-height:0;height:min(52vh,420px)}
-  .sheet .sinfo{padding:24px 20px calc(20px + env(safe-area-inset-bottom))}
+  .sheet .box{display:flex;flex-direction:column;border-radius:24px 24px 0 0;height:auto;max-height:92vh;max-height:92dvh;transform:translateY(100%)}
+  .sheet .media{min-height:0;flex:0 0 auto;height:min(40vh,340px)}
+  .sheet .sinfo{flex:1 1 auto;padding:24px 20px calc(20px + env(safe-area-inset-bottom))}
   .sheet .cta{padding-top:22px}
 }
 .more-wrap{display:flex;justify-content:center;margin-top:40px}
@@ -739,11 +739,25 @@ function openSheet(it) {
   $s("sh-cores").innerHTML = it.cores?.length ? `<h4>Escolha a cor</h4><div class="opts" data-g="cor">${it.cores.map((c) => `<button class="opt">${esc(c)}</button>`).join("")}</div>` : "";
   $s("sh-extras").innerHTML = it.extras?.length ? `<h4>Quer adicionar?</h4><div class="opts" data-g="extras">${it.extras.map((c) => `<button class="opt">+ ${esc(c)}</button>`).join("")}</div>` : "";
   waSheet();
-  $s("sh-gal").scrollLeft = 0;
   sheet.classList.add("on");
-  document.body.style.overflow = "hidden";
+  $s("sh-gal").scrollLeft = 0;
+  $s("sh-gal").parentElement.nextElementSibling.scrollTop = 0;
+  lockScroll(true);
 }
-function closeSheet() { sheet.classList.remove("on"); document.body.style.overflow = ""; }
+let lockY = 0;
+function lockScroll(on) {
+  const b = document.body.style;
+  if (on) {
+    lockY = scrollY;
+    Object.assign(b, { position: "fixed", top: `-${lockY}px`, left: "0", right: "0", width: "100%", overflow: "hidden" });
+    document.documentElement.style.scrollBehavior = "auto";
+  } else {
+    Object.assign(b, { position: "", top: "", left: "", right: "", width: "", overflow: "" });
+    scrollTo(0, lockY);
+    document.documentElement.style.scrollBehavior = "";
+  }
+}
+function closeSheet() { if (!sheet.classList.contains("on")) return; sheet.classList.remove("on"); lockScroll(false); $s("sh-gal").scrollLeft = 0; }
 sheet.addEventListener("click", (e) => {
   if (e.target === sheet || e.target.closest(".x")) return closeSheet();
   const th = e.target.closest(".thumbs button");
