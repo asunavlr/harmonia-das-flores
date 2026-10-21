@@ -126,11 +126,14 @@ dialog::backdrop{background:rgba(29,51,40,.5)}
       <div>
         <label for="fc">Categoria</label>
         <select id="fc">
-          <option value="buque">Buquês</option>
           <option value="rosas">Rosas</option>
-          <option value="plantas">Orquídeas e plantas</option>
-          <option value="presente">Presentes</option>
+          <option value="girassois">Girassóis</option>
+          <option value="campo">Flores do campo</option>
+          <option value="gerberas">Gérberas</option>
+          <option value="lirios">Lírios</option>
+          <option value="orquideas">Orquídeas</option>
           <option value="cestas">Cestas</option>
+          <option value="presentes">Presentes</option>
         </select>
       </div>
       <div>
@@ -177,7 +180,7 @@ dialog::backdrop{background:rgba(29,51,40,.5)}
 
 <script>
 const $ = (id) => document.getElementById(id);
-const CAT = { buque: "Buquês", rosas: "Rosas", plantas: "Orquídeas e plantas", presente: "Presentes", cestas: "Cestas" };
+const CAT = {rosas: "Rosas", girassois: "Girassóis", campo: "Flores do campo", gerberas: "Gérberas", lirios: "Lírios", orquideas: "Orquídeas", cestas: "Cestas", presentes: "Presentes"};
 let pw = "";
 let items = [];
 let uploads = {}; // caminho -> base64
@@ -258,7 +261,7 @@ $("list").addEventListener("click", (e) => {
 
 function openForm(i) {
   editing = i;
-  const it = items[i] || { n: "", d: "", c: "buque", p: "", t: "", novo: true };
+  const it = items[i] || { n: "", d: "", c: "rosas", p: "", t: "", novo: true };
   $("formTitle").textContent = i < 0 ? "Nova flor" : "Editar flor";
   $("fn").value = it.n; $("fd").value = it.d; $("fc").value = it.c; $("fprazo").value = it.prazo || ""; $("fflores").value = it.flores || ""; $("ftam").value = it.tam || ""; $("fdura").value = it.dura || ""; $("fcores").value = (it.cores || []).join(", "); $("fextras").value = (it.extras || []).join(", "); $("fcuid").value = it.cuid || ""; $("ft").value = it.t || ""; $("fnovo").checked = !!it.novo;
   photos = i < 0 ? [] : list(it).slice();

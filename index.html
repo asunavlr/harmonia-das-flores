@@ -143,6 +143,7 @@ section{position:relative}
   .sheet .sinfo{padding:24px 20px calc(20px + env(safe-area-inset-bottom))}
   .sheet .cta{padding-top:22px}
 }
+.more-wrap{display:flex;justify-content:center;margin-top:40px}
 /* catálogo */
 .catalog{padding:130px 0 110px}
 .cat-head{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap}
@@ -450,13 +451,17 @@ footer::before{content:"";position:absolute;width:700px;height:700px;right:-200p
     <div class="chips rv" role="tablist">
       <button class="chip on" data-f="all">Todos</button>
       <button class="chip" data-f="novo" id="chip-novo" hidden>✿ Novidades</button>
-      <button class="chip" data-f="buque">Buquês</button>
       <button class="chip" data-f="rosas">Rosas</button>
-      <button class="chip" data-f="plantas">Orquídeas e plantas</button>
-      <button class="chip" data-f="presente">Presentes</button>
+      <button class="chip" data-f="girassois">Girassóis</button>
+      <button class="chip" data-f="campo">Flores do campo</button>
+      <button class="chip" data-f="gerberas">Gérberas</button>
+      <button class="chip" data-f="lirios">Lírios</button>
+      <button class="chip" data-f="orquideas">Orquídeas</button>
       <button class="chip" data-f="cestas">Cestas</button>
+      <button class="chip" data-f="presentes">Presentes</button>
     </div>
     <div class="grid" id="grid"></div>
+    <div class="more-wrap"><button class="btn btn-ghost" id="loadMore" hidden>Ver mais modelos</button></div>
   </div>
 </section>
 
@@ -583,7 +588,7 @@ footer::before{content:"";position:absolute;width:700px;height:700px;right:-200p
       </div>
       <div>
         <h4>Catálogo</h4>
-        <a href="#catalogo" data-go="buque">Buquês</a><a href="#catalogo" data-go="rosas">Rosas</a><a href="#catalogo" data-go="plantas">Orquídeas</a><a href="#catalogo" data-go="presente">Presentes</a><a href="#catalogo" data-go="cestas">Cestas</a>
+        <a href="#catalogo" data-go="rosas">Rosas</a><a href="#catalogo" data-go="girassois">Girassóis</a><a href="#catalogo" data-go="campo">Flores do campo</a><a href="#catalogo" data-go="cestas">Cestas</a><a href="#catalogo" data-go="presentes">Presentes</a>
       </div>
       <div>
         <h4>Visite a loja</h4>
@@ -656,11 +661,12 @@ function renderCatalog(items) {
     const k = Math.round(g.scrollLeft / g.clientWidth);
     g.parentElement.querySelectorAll(".dots i").forEach((d, j) => d.classList.toggle("on", j === k));
   }, { passive: true }));
+  applyFilter(false);
   document.getElementById("chip-novo").hidden = !items.some((it) => it.novo);
 }
 
 /* ficha do produto */
-const CATN = { buque: "Buquês", rosas: "Rosas", plantas: "Orquídeas e plantas", presente: "Presentes", cestas: "Cestas" };
+const CATN = {rosas: "Rosas", girassois: "Girassóis", campo: "Flores do campo", gerberas: "Gérberas", lirios: "Lírios", orquideas: "Orquídeas", cestas: "Cestas", presentes: "Presentes"};
 const sheet = document.getElementById("sheet");
 const $s = (id) => document.getElementById(id);
 let pick = { cor: "", extras: new Set() }, cur = null;
@@ -720,15 +726,28 @@ document.querySelectorAll("[data-go]").forEach((a) => a.addEventListener("click"
 }));
 fetch("catalogo.json", { cache: "no-cache" }).then((r) => r.json()).then(renderCatalog).catch(() => {});
 
+const PAGE = 12;
+let filt = "all", shown = PAGE;
+function applyFilter(animate) {
+  let n = 0, total = 0;
+  grid.querySelectorAll(".card").forEach((card) => {
+    const match = filt === "all" || (filt === "novo" ? card.dataset.novo === "1" : card.dataset.c === filt);
+    if (match) total++;
+    const show = match && n < shown;
+    if (show) n++;
+    const was = !card.classList.contains("hide");
+    card.classList.toggle("hide", !show);
+    if (show && (animate || !was)) card.animate([{ opacity: 0, transform: "translateY(20px)" }, { opacity: 1, transform: "none" }], { duration: 500, easing: "cubic-bezier(.2,.8,.2,1)" });
+  });
+  const lm = document.getElementById("loadMore");
+  lm.hidden = n >= total;
+  lm.textContent = `Ver mais modelos (${total - n})`;
+}
 document.querySelectorAll(".chip").forEach((b) => b.addEventListener("click", () => {
   document.querySelectorAll(".chip").forEach((x) => x.classList.toggle("on", x === b));
-  const f = b.dataset.f;
-  grid.querySelectorAll(".card").forEach((card) => {
-    const show = f === "all" || (f === "novo" ? card.dataset.novo === "1" : card.dataset.c === f);
-    card.classList.toggle("hide", !show);
-    if (show) { card.animate([{ opacity: 0, transform: "translateY(20px)" }, { opacity: 1, transform: "none" }], { duration: 500, easing: "cubic-bezier(.2,.8,.2,1)" }); }
-  });
+  filt = b.dataset.f; shown = PAGE; applyFilter(true);
 }));
+document.getElementById("loadMore").addEventListener("click", () => { shown += PAGE; applyFilter(false); });
 
 /* feedbacks (modelo: trocar pelos feedbacks reais dos destaques do Instagram) */
 const REV = [
