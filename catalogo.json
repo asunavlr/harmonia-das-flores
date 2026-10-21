@@ -13523,5 +13523,47 @@
    "img/f/m081.jpg"
   ],
   "novo": true
+ },
+ {
+  "d": "Cesta natalina com vinho, chocolates e delícias de fim de ano. Montamos do seu jeito para presentear.",
+  "t": "",
+  "prazo": "Sob encomenda",
+  "flores": "Flores e elementos natalinos",
+  "tam": "Sob medida",
+  "dura": "Toda a temporada",
+  "cores": [],
+  "extras": [
+   "Cartão"
+  ],
+  "cuid": "",
+  "id": "n001",
+  "n": "Cesta de Natal nº 1",
+  "c": "natal",
+  "img": "img/f/n001.jpg",
+  "imgs": [
+   "img/f/n001.jpg"
+  ],
+  "novo": true
+ },
+ {
+  "d": "Cesta natalina com vinho, chocolates e delícias de fim de ano. Montamos do seu jeito para presentear.",
+  "t": "",
+  "prazo": "Sob encomenda",
+  "flores": "Flores e elementos natalinos",
+  "tam": "Sob medida",
+  "dura": "Toda a temporada",
+  "cores": [],
+  "extras": [
+   "Cartão"
+  ],
+  "cuid": "",
+  "id": "n002",
+  "n": "Cesta de Natal nº 2",
+  "c": "natal",
+  "img": "img/f/n002.jpg",
+  "imgs": [
+   "img/f/n002.jpg"
+  ],
+  "novo": true
  }
 ]
