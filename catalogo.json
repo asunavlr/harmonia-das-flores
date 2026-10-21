@@ -381,9 +381,9 @@
  },
  {
   "id": "h014",
-  "n": "Planta em Vaso nº 2",
-  "d": "Plantas e flores em vaso, decoradas para presentear. Duram muito mais que um buquê.",
-  "c": "plantas",
+  "n": "Bambu da Sorte nº 1",
+  "d": "Bambu da sorte em vaso decorado, símbolo de prosperidade e boa energia. Um presente que dura anos.",
+  "c": "bambu",
   "img": "img/f/h014.jpg",
   "imgs": [
    "img/f/h014.jpg"
@@ -391,15 +391,15 @@
   "t": "",
   "novo": false,
   "prazo": "",
-  "flores": "",
+  "flores": "Bambu da sorte",
   "tam": "",
-  "dura": "",
+  "dura": "Anos, com os cuidados certos",
   "cores": [],
   "extras": [
    "Cartão",
    "Chocolate"
   ],
-  "cuid": ""
+  "cuid": "Mantenha em local iluminado sem sol direto e troque a água do vaso a cada semana."
  },
  {
   "id": "g002",
@@ -593,9 +593,9 @@
  },
  {
   "id": "h015",
-  "n": "Planta em Vaso nº 3",
-  "d": "Plantas e flores em vaso, decoradas para presentear. Duram muito mais que um buquê.",
-  "c": "plantas",
+  "n": "Bambu da Sorte nº 2",
+  "d": "Bambu da sorte em vaso decorado, símbolo de prosperidade e boa energia. Um presente que dura anos.",
+  "c": "bambu",
   "img": "img/f/h015.jpg",
   "imgs": [
    "img/f/h015.jpg"
@@ -603,15 +603,15 @@
   "t": "",
   "novo": false,
   "prazo": "",
-  "flores": "",
+  "flores": "Bambu da sorte",
   "tam": "",
-  "dura": "",
+  "dura": "Anos, com os cuidados certos",
   "cores": [],
   "extras": [
    "Cartão",
    "Chocolate"
   ],
-  "cuid": ""
+  "cuid": "Mantenha em local iluminado sem sol direto e troque a água do vaso a cada semana."
  },
  {
   "id": "g004",
@@ -805,9 +805,9 @@
  },
  {
   "id": "h017",
-  "n": "Planta em Vaso nº 4",
-  "d": "Plantas e flores em vaso, decoradas para presentear. Duram muito mais que um buquê.",
-  "c": "plantas",
+  "n": "Bambu da Sorte nº 3",
+  "d": "Bambu da sorte em vaso decorado, símbolo de prosperidade e boa energia. Um presente que dura anos.",
+  "c": "bambu",
   "img": "img/f/h017.jpg",
   "imgs": [
    "img/f/h017.jpg"
@@ -815,15 +815,15 @@
   "t": "",
   "novo": false,
   "prazo": "",
-  "flores": "",
+  "flores": "Bambu da sorte",
   "tam": "",
-  "dura": "",
+  "dura": "Anos, com os cuidados certos",
   "cores": [],
   "extras": [
    "Cartão",
    "Chocolate"
   ],
-  "cuid": ""
+  "cuid": "Mantenha em local iluminado sem sol direto e troque a água do vaso a cada semana."
  },
  {
   "id": "f051",
@@ -1017,7 +1017,7 @@
  },
  {
   "id": "h020",
-  "n": "Planta em Vaso nº 5",
+  "n": "Planta em Vaso nº 2",
   "d": "Plantas e flores em vaso, decoradas para presentear. Duram muito mais que um buquê.",
   "c": "plantas",
   "img": "img/f/h020.jpg",
@@ -1229,9 +1229,9 @@
  },
  {
   "id": "h021",
-  "n": "Planta em Vaso nº 6",
-  "d": "Plantas e flores em vaso, decoradas para presentear. Duram muito mais que um buquê.",
-  "c": "plantas",
+  "n": "Bambu da Sorte nº 4",
+  "d": "Bambu da sorte em vaso decorado, símbolo de prosperidade e boa energia. Um presente que dura anos.",
+  "c": "bambu",
   "img": "img/f/h021.jpg",
   "imgs": [
    "img/f/h021.jpg"
@@ -1239,15 +1239,15 @@
   "t": "",
   "novo": false,
   "prazo": "",
-  "flores": "",
+  "flores": "Bambu da sorte",
   "tam": "",
-  "dura": "",
+  "dura": "Anos, com os cuidados certos",
   "cores": [],
   "extras": [
    "Cartão",
    "Chocolate"
   ],
-  "cuid": ""
+  "cuid": "Mantenha em local iluminado sem sol direto e troque a água do vaso a cada semana."
  },
  {
   "id": "f070",
@@ -1441,7 +1441,7 @@
  },
  {
   "id": "h025",
-  "n": "Planta em Vaso nº 7",
+  "n": "Planta em Vaso nº 3",
   "d": "Plantas e flores em vaso, decoradas para presentear. Duram muito mais que um buquê.",
   "c": "plantas",
   "img": "img/f/h025.jpg",
@@ -1653,7 +1653,7 @@
  },
  {
   "id": "h038",
-  "n": "Planta em Vaso nº 8",
+  "n": "Planta em Vaso nº 4",
   "d": "Plantas e flores em vaso, decoradas para presentear. Duram muito mais que um buquê.",
   "c": "plantas",
   "img": "img/f/h038.jpg",
@@ -1865,7 +1865,7 @@
  },
  {
   "id": "h056",
-  "n": "Planta em Vaso nº 9",
+  "n": "Planta em Vaso nº 5",
   "d": "Plantas e flores em vaso, decoradas para presentear. Duram muito mais que um buquê.",
   "c": "plantas",
   "img": "img/f/h056.jpg",
@@ -2077,7 +2077,7 @@
  },
  {
   "id": "h065",
-  "n": "Planta em Vaso nº 10",
+  "n": "Planta em Vaso nº 6",
   "d": "Plantas e flores em vaso, decoradas para presentear. Duram muito mais que um buquê.",
   "c": "plantas",
   "img": "img/f/h065.jpg",
@@ -2289,7 +2289,7 @@
  },
  {
   "id": "h068",
-  "n": "Planta em Vaso nº 11",
+  "n": "Planta em Vaso nº 7",
   "d": "Plantas e flores em vaso, decoradas para presentear. Duram muito mais que um buquê.",
   "c": "plantas",
   "img": "img/f/h068.jpg",
@@ -2501,7 +2501,7 @@
  },
  {
   "id": "h085",
-  "n": "Planta em Vaso nº 12",
+  "n": "Planta em Vaso nº 8",
   "d": "Plantas e flores em vaso, decoradas para presentear. Duram muito mais que um buquê.",
   "c": "plantas",
   "img": "img/f/h085.jpg",
@@ -2713,7 +2713,7 @@
  },
  {
   "id": "h099",
-  "n": "Planta em Vaso nº 13",
+  "n": "Planta em Vaso nº 9",
   "d": "Plantas e flores em vaso, decoradas para presentear. Duram muito mais que um buquê.",
   "c": "plantas",
   "img": "img/f/h099.jpg",
@@ -2925,7 +2925,7 @@
  },
  {
   "id": "h100",
-  "n": "Planta em Vaso nº 14",
+  "n": "Planta em Vaso nº 10",
   "d": "Plantas e flores em vaso, decoradas para presentear. Duram muito mais que um buquê.",
   "c": "plantas",
   "img": "img/f/h100.jpg",
@@ -3137,7 +3137,7 @@
  },
  {
   "id": "h102",
-  "n": "Planta em Vaso nº 15",
+  "n": "Planta em Vaso nº 11",
   "d": "Plantas e flores em vaso, decoradas para presentear. Duram muito mais que um buquê.",
   "c": "plantas",
   "img": "img/f/h102.jpg",
@@ -3349,7 +3349,7 @@
  },
  {
   "id": "h103",
-  "n": "Planta em Vaso nº 16",
+  "n": "Planta em Vaso nº 12",
   "d": "Plantas e flores em vaso, decoradas para presentear. Duram muito mais que um buquê.",
   "c": "plantas",
   "img": "img/f/h103.jpg",
@@ -3536,7 +3536,7 @@
  },
  {
   "id": "h104",
-  "n": "Planta em Vaso nº 17",
+  "n": "Planta em Vaso nº 13",
   "d": "Plantas e flores em vaso, decoradas para presentear. Duram muito mais que um buquê.",
   "c": "plantas",
   "img": "img/f/h104.jpg",
@@ -3723,7 +3723,7 @@
  },
  {
   "id": "h105",
-  "n": "Planta em Vaso nº 18",
+  "n": "Planta em Vaso nº 14",
   "d": "Plantas e flores em vaso, decoradas para presentear. Duram muito mais que um buquê.",
   "c": "plantas",
   "img": "img/f/h105.jpg",
@@ -3910,7 +3910,7 @@
  },
  {
   "id": "h106",
-  "n": "Planta em Vaso nº 19",
+  "n": "Planta em Vaso nº 15",
   "d": "Plantas e flores em vaso, decoradas para presentear. Duram muito mais que um buquê.",
   "c": "plantas",
   "img": "img/f/h106.jpg",
@@ -4097,7 +4097,7 @@
  },
  {
   "id": "h107",
-  "n": "Planta em Vaso nº 20",
+  "n": "Planta em Vaso nº 16",
   "d": "Plantas e flores em vaso, decoradas para presentear. Duram muito mais que um buquê.",
   "c": "plantas",
   "img": "img/f/h107.jpg",
@@ -4284,7 +4284,7 @@
  },
  {
   "id": "i033",
-  "n": "Planta em Vaso nº 21",
+  "n": "Planta em Vaso nº 17",
   "d": "Plantas e flores em vaso, decoradas para presentear. Duram muito mais que um buquê.",
   "c": "plantas",
   "img": "img/f/i033.jpg",
@@ -4471,7 +4471,7 @@
  },
  {
   "id": "i048",
-  "n": "Planta em Vaso nº 22",
+  "n": "Planta em Vaso nº 18",
   "d": "Plantas e flores em vaso, decoradas para presentear. Duram muito mais que um buquê.",
   "c": "plantas",
   "img": "img/f/i048.jpg",

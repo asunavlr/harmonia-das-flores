@@ -509,6 +509,7 @@ footer::before{content:"";position:absolute;width:700px;height:700px;right:-200p
       <button class="chip" data-f="lirios">Lírios</button>
       <button class="chip" data-f="orquideas">Orquídeas</button>
       <button class="chip" data-f="plantas">Plantas e vasos</button>
+      <button class="chip" data-f="bambu">Bambu da sorte</button>
       <button class="chip" data-f="cestas">Cestas</button>
       <button class="chip" data-f="presentes">Presentes</button>
     </div>
@@ -718,7 +719,7 @@ function renderCatalog(items) {
 }
 
 /* ficha do produto */
-const CATN = {rosas: "Rosas", girassois: "Girassóis", campo: "Flores do campo", gerberas: "Gérberas", lirios: "Lírios", orquideas: "Orquídeas", plantas: "Plantas e vasos", cestas: "Cestas", presentes: "Presentes"};
+const CATN = {rosas: "Rosas", girassois: "Girassóis", campo: "Flores do campo", gerberas: "Gérberas", lirios: "Lírios", orquideas: "Orquídeas", plantas: "Plantas e vasos", bambu: "Bambu da sorte", cestas: "Cestas", presentes: "Presentes"};
 const sheet = document.getElementById("sheet");
 const $s = (id) => document.getElementById(id);
 let pick = { cor: "", extras: new Set() }, cur = null;
