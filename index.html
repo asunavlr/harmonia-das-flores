@@ -144,6 +144,31 @@ section{position:relative}
   .sheet .cta{padding-top:22px}
 }
 .more-wrap{display:flex;justify-content:center;margin-top:40px}
+/* destaque */
+.spot{padding:130px 0 20px}
+.spot-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.spot-media{position:relative;max-width:480px;justify-self:center;width:100%}
+.spot-ph{border-radius:220px 220px 28px 28px;overflow:hidden;aspect-ratio:4/5.2;box-shadow:0 50px 90px -40px rgba(120,30,55,.55)}
+.spot-ph img{width:100%;height:118%;object-fit:cover;margin-top:-9%}
+.spot-media::before{content:"";position:absolute;inset:-26px -26px 40px 40px;border-radius:240px 240px 32px 32px;background:var(--blush);z-index:-1}
+.spot-badge{position:absolute;left:-28px;bottom:60px;display:flex;align-items:center;gap:12px;background:var(--paper);padding:14px 20px 14px 14px;border-radius:18px;box-shadow:0 20px 40px -18px rgba(29,51,40,.35);font-size:13px;color:var(--muted);animation:float 5s ease-in-out infinite}
+.spot-badge svg{width:38px;height:38px;padding:9px;border-radius:12px;background:var(--rose);color:#fff}
+.spot-badge b{display:block;color:var(--ink);font-size:15px}
+.spot-ring{position:absolute;right:-18px;top:30px;width:118px;height:118px;border-radius:50%;background:var(--ink);color:var(--cream);display:grid;place-items:center;text-align:center;font-family:"Great Vibes";font-size:25px;line-height:1;transform:rotate(-10deg)}
+@keyframes float{50%{transform:translateY(-10px)}}
+.spot-text h2.title{font-size:clamp(44px,6vw,84px)}
+.spot-list{list-style:none;display:grid;gap:12px;margin-top:26px}
+.spot-list li{display:flex;gap:12px;align-items:flex-start;color:var(--ink-2)}
+.spot-list svg{width:22px;height:22px;padding:4px;border-radius:50%;background:var(--blush);color:var(--rose);flex-shrink:0;margin-top:1px}
+.spot-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+@media (max-width:860px){
+  .spot{padding:90px 0 10px}
+  .spot-grid{grid-template-columns:1fr;gap:56px}
+  .spot-media{max-width:360px}
+  .spot-badge{left:-8px}
+  .spot-ring{right:-6px;width:96px;height:96px;font-size:21px}
+  .spot-cta .btn{flex:1;justify-content:center}
+}
 /* catálogo */
 .catalog{padding:130px 0 110px}
 .cat-head{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap}
@@ -439,6 +464,30 @@ footer::before{content:"";position:absolute;width:700px;height:700px;right:-200p
   </div>
 </div>
 
+<section class="spot" id="destaque">
+  <div class="wrap spot-grid">
+    <div class="spot-media rv">
+      <div class="spot-ph" data-p="-0.05"><img src="img/destaque-rosa.jpg" alt="Rosa vermelha com coração Eu te amo" loading="lazy"></div>
+      <div class="spot-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.6-7 10-7 10Z"/></svg><span><b>Mais amado</b>pelos clientes</span></div>
+      <span class="spot-ring">o presente<br>perfeito</span>
+    </div>
+    <div class="spot-text">
+      <span class="eyebrow rv">O queridinho da casa</span>
+      <h2 class="title rv d1">Rosa <em>Eu Te Amo</em></h2>
+      <p class="lead rv d2">Uma rosa vermelha em embalagem especial, com trigo decorativo e o coraçãozinho “Eu te amo”. Simples, delicado e impossível de não sorrir. É o presente que todo mundo ama receber.</p>
+      <ul class="spot-list rv d2">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg>Montada na hora, com rosa fresca</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg>Perfeita para surpreender no trabalho, na escola ou em casa</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg>Dá pra adicionar chocolate, Ferrero Rocher ou cartão</li>
+      </ul>
+      <div class="spot-cta rv d3">
+        <a class="btn btn-rose wa" href="#" data-msg="Olá! Quero a Rosa Eu Te Amo que vi no site 🌹">Quero essa rosa</a>
+        <button class="btn btn-ghost" id="spotMore" type="button">Ver detalhes</button>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="catalog" id="catalogo">
   <div class="wrap">
     <div class="cat-head">
@@ -457,6 +506,7 @@ footer::before{content:"";position:absolute;width:700px;height:700px;right:-200p
       <button class="chip" data-f="gerberas">Gérberas</button>
       <button class="chip" data-f="lirios">Lírios</button>
       <button class="chip" data-f="orquideas">Orquídeas</button>
+      <button class="chip" data-f="plantas">Plantas e vasos</button>
       <button class="chip" data-f="cestas">Cestas</button>
       <button class="chip" data-f="presentes">Presentes</button>
     </div>
@@ -588,7 +638,7 @@ footer::before{content:"";position:absolute;width:700px;height:700px;right:-200p
       </div>
       <div>
         <h4>Catálogo</h4>
-        <a href="#catalogo" data-go="rosas">Rosas</a><a href="#catalogo" data-go="girassois">Girassóis</a><a href="#catalogo" data-go="campo">Flores do campo</a><a href="#catalogo" data-go="cestas">Cestas</a><a href="#catalogo" data-go="presentes">Presentes</a>
+        <a href="#catalogo" data-go="rosas">Rosas</a><a href="#catalogo" data-go="girassois">Girassóis</a><a href="#catalogo" data-go="campo">Flores do campo</a><a href="#catalogo" data-go="plantas">Plantas e vasos</a><a href="#catalogo" data-go="cestas">Cestas</a><a href="#catalogo" data-go="presentes">Presentes</a>
       </div>
       <div>
         <h4>Visite a loja</h4>
@@ -666,7 +716,7 @@ function renderCatalog(items) {
 }
 
 /* ficha do produto */
-const CATN = {rosas: "Rosas", girassois: "Girassóis", campo: "Flores do campo", gerberas: "Gérberas", lirios: "Lírios", orquideas: "Orquídeas", cestas: "Cestas", presentes: "Presentes"};
+const CATN = {rosas: "Rosas", girassois: "Girassóis", campo: "Flores do campo", gerberas: "Gérberas", lirios: "Lírios", orquideas: "Orquídeas", plantas: "Plantas e vasos", cestas: "Cestas", presentes: "Presentes"};
 const sheet = document.getElementById("sheet");
 const $s = (id) => document.getElementById(id);
 let pick = { cor: "", extras: new Set() }, cur = null;
@@ -724,6 +774,9 @@ grid.addEventListener("keydown", (e) => {
 document.querySelectorAll("[data-go]").forEach((a) => a.addEventListener("click", () => {
   document.querySelector(`.chip[data-f="${a.dataset.go}"]`)?.click();
 }));
+document.getElementById("spotMore").addEventListener("click", () => {
+  const it = CATALOG.find((x) => x.destaque); if (it) openSheet(it);
+});
 fetch("catalogo.json", { cache: "no-cache" }).then((r) => r.json()).then(renderCatalog).catch(() => {});
 
 const PAGE = 12;
