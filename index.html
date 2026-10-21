@@ -191,7 +191,7 @@ section{position:relative}
 /* parallax ocasiões */
 .occasions{min-height:90vh;display:flex;align-items:center;color:#fff;overflow:hidden;padding:120px 0}
 .occasions{isolation:isolate;background:#14241c}
-.occasions .bg{position:absolute;inset:-15% -30px;z-index:0;background:url(img/orquidea.jpg) center/cover;filter:blur(3px);will-change:transform}
+.occasions .bg{position:absolute;inset:-15% -30px;z-index:0;background:url(img/orquidea.jpg) center/cover;will-change:transform}
 .occasions .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(18,32,25,.94) 0,rgba(18,32,25,.82) 50%,rgba(18,32,25,.5) 100%)}
 .occasions .wrap{position:relative;z-index:2}
 .occasions .eyebrow{color:var(--rose-2)}
@@ -266,8 +266,8 @@ section{position:relative}
 .cta{padding:0 0 130px}
 .cta-box{position:relative;border-radius:32px;overflow:hidden;padding:clamp(48px,8vw,100px) clamp(24px,6vw,80px);color:#fff;text-align:center}
 .cta-box{isolation:isolate;background:#3a1f2a}
-.cta-box .bg{position:absolute;inset:-20% -40px;z-index:0;background:url(img/rosas.jpg) center/cover;filter:blur(2.5px);will-change:transform}
-.cta-box .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(110,25,50,.6),rgba(29,51,40,.78))}
+.cta-box .bg{position:absolute;inset:-20% -40px;z-index:0;background:url(img/rosas.jpg) center/cover;filter:none;will-change:transform}
+.cta-box .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(110,25,50,.55),rgba(29,51,40,.75))}
 .cta-box h2,.cta-box p{text-shadow:0 2px 18px rgba(0,0,0,.35)}
 .cta-box>*:not(.bg){position:relative;z-index:2}
 .cta-box h2{font-family:"Cormorant Garamond";font-weight:500;font-size:clamp(40px,6vw,80px);line-height:1}
