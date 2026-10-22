@@ -675,7 +675,7 @@ footer::before{content:"";position:absolute;width:700px;height:700px;right:-200p
     <dl id="sh-dl"></dl>
     <div id="sh-cores"></div>
     <div id="sh-extras"></div>
-    <div class="cta"><a class="btn btn-rose" id="sh-wa" target="_blank" rel="noopener">Pedir pelo WhatsApp</a><p class="note">A mensagem já vai com a sua escolha. A gente confirma valor e entrega por lá.</p></div>
+    <div class="cta"><a class="btn btn-rose" id="sh-wa" target="_blank" rel="noopener">Fazer pedido pelo WhatsApp</a><p class="note">Personalizamos e entregamos em Pomerode e região.</p></div>
   </div>
 </div></div>
 <div class="lb" id="lb"><button aria-label="Fechar">×</button><img alt=""></div>
@@ -703,9 +703,9 @@ function renderCatalog(items) {
     return `
   <article tabindex="0" data-i="${i}" class="card rv in ${i % 3 ? "d" + (i % 3) : ""}" data-c="${esc(it.c)}" data-novo="${it.novo ? 1 : 0}">
     <div class="ph"><div class="gal">${pics(it).map((src, k) => `<img src="${esc(src)}" alt="${esc(it.n)}${k ? " · foto " + (k + 1) : ""}" loading="lazy">`).join("")}</div>${pics(it).length > 1 ? `<div class="dots">${pics(it).map((_, k) => `<i class="${k ? "" : "on"}"></i>`).join("")}</div><button class="nav-ph prev" aria-label="Foto anterior">${arrow}</button><button class="nav-ph next" aria-label="Próxima foto">${arrow}</button>` : ""}${it.novo ? '<span class="tag tag-new">Novidade</span>' : it.t ? `<span class="tag">${esc(it.t)}</span>` : ""}
-      <div class="quick"><a class="btn btn-rose" target="_blank" rel="noopener" href="${msg}">Pedir pelo WhatsApp</a></div></div>
+      <div class="quick"><a class="btn btn-rose" target="_blank" rel="noopener" href="${msg}">Fazer pedido pelo WhatsApp</a></div></div>
     <div class="body"><h3>${esc(it.n)}</h3><p>${esc(it.d)}</p>${it.flores || it.cores?.length || it.extras?.length ? '<button class="more">Ver detalhes</button>' : ""}
-      <div class="row">${avail(it)}<a target="_blank" rel="noopener" href="${msg}">Pedir ${arrow}</a></div></div>
+      <div class="row">${avail(it)}<a target="_blank" rel="noopener" href="${msg}">Fazer pedido ${arrow}</a></div></div>
   </article>`;
   }).join("");
   grid.querySelectorAll(".nav-ph").forEach((b) => b.addEventListener("click", () => {
