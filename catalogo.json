@@ -18894,5 +18894,123 @@
    "img/f/r107.jpg"
   ],
   "novo": true
+ },
+ {
+  "d": "Presépio artesanal para a decoração de Natal. Fica lindo na sala ou como presente.",
+  "t": "",
+  "prazo": "Sob encomenda",
+  "flores": "Flores e elementos natalinos",
+  "tam": "Sob medida",
+  "dura": "Toda a temporada",
+  "cores": [],
+  "extras": [
+   "Cartão"
+  ],
+  "cuid": "",
+  "id": "s001",
+  "n": "Presépio Decorativo",
+  "c": "natal",
+  "img": "img/f/s001.jpg",
+  "imgs": [
+   "img/f/s001.jpg"
+  ],
+  "novo": true
+ },
+ {
+  "id": "s002",
+  "n": "Copo Capivara",
+  "d": "Copos térmicos da capivara em várias cores. Mantêm a bebida na temperatura ideal. Escolha a sua!",
+  "c": "presentes",
+  "img": "img/f/s002.jpg",
+  "imgs": [
+   "img/f/s002.jpg"
+  ],
+  "t": "",
+  "novo": true,
+  "prazo": "",
+  "flores": "",
+  "tam": "",
+  "dura": "",
+  "cores": [],
+  "extras": [
+   "Cartão",
+   "Balão"
+  ],
+  "cuid": ""
+ },
+ {
+  "id": "s003",
+  "n": "Buquê de Girassóis nº 79",
+  "d": "Girassóis frescos com flores do campo. Alegria em forma de presente.",
+  "c": "girassois",
+  "img": "img/f/s003.jpg",
+  "imgs": [
+   "img/f/s003.jpg"
+  ],
+  "t": "",
+  "novo": true,
+  "prazo": "",
+  "flores": "",
+  "tam": "",
+  "dura": "",
+  "cores": [],
+  "extras": [
+   "Chocolate",
+   "Pelúcia",
+   "Cartão"
+  ],
+  "cuid": ""
+ },
+ {
+  "id": "s004",
+  "n": "Buquê de Girassóis nº 80",
+  "d": "Girassóis frescos com flores do campo. Alegria em forma de presente.",
+  "c": "girassois",
+  "img": "img/f/s004.jpg",
+  "imgs": [
+   "img/f/s004.jpg"
+  ],
+  "t": "",
+  "novo": true,
+  "prazo": "",
+  "flores": "",
+  "tam": "",
+  "dura": "",
+  "cores": [],
+  "extras": [
+   "Chocolate",
+   "Pelúcia",
+   "Cartão"
+  ],
+  "cuid": ""
+ },
+ {
+  "id": "s005",
+  "n": "Buquê de Rosas nº 160",
+  "d": "Rosas selecionadas, montadas na hora com folhagens e embalagem caprichada.",
+  "c": "rosas",
+  "img": "img/f/s005.jpg",
+  "imgs": [
+   "img/f/s005.jpg"
+  ],
+  "t": "",
+  "novo": true,
+  "prazo": "",
+  "flores": "",
+  "tam": "",
+  "dura": "",
+  "cores": [
+   "Vermelho",
+   "Rosa",
+   "Branco",
+   "Colorido"
+  ],
+  "extras": [
+   "Chocolate",
+   "Pelúcia",
+   "Cartão",
+   "Balão"
+  ],
+  "cuid": ""
  }
 ]
