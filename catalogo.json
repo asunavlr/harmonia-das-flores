@@ -19012,5 +19012,312 @@
    "Balão"
   ],
   "cuid": ""
+ },
+ {
+  "id": "t001",
+  "n": "Buquê de Girassóis nº 81",
+  "d": "Girassóis frescos com flores do campo. Alegria em forma de presente.",
+  "c": "girassois",
+  "img": "img/f/t001.jpg",
+  "imgs": [
+   "img/f/t001.jpg"
+  ],
+  "t": "",
+  "novo": true,
+  "prazo": "",
+  "flores": "",
+  "tam": "",
+  "dura": "",
+  "cores": [],
+  "extras": [
+   "Chocolate",
+   "Pelúcia",
+   "Cartão"
+  ],
+  "cuid": ""
+ },
+ {
+  "id": "t002",
+  "n": "Buquê de Rosas nº 161",
+  "d": "Rosas selecionadas, montadas na hora com folhagens e embalagem caprichada.",
+  "c": "rosas",
+  "img": "img/f/t002.jpg",
+  "imgs": [
+   "img/f/t002.jpg"
+  ],
+  "t": "",
+  "novo": true,
+  "prazo": "",
+  "flores": "",
+  "tam": "",
+  "dura": "",
+  "cores": [
+   "Vermelho",
+   "Rosa",
+   "Branco",
+   "Colorido"
+  ],
+  "extras": [
+   "Chocolate",
+   "Pelúcia",
+   "Cartão",
+   "Balão"
+  ],
+  "cuid": ""
+ },
+ {
+  "id": "t003",
+  "n": "Buquê de Rosas nº 162",
+  "d": "Rosas selecionadas, montadas na hora com folhagens e embalagem caprichada.",
+  "c": "rosas",
+  "img": "img/f/t003.jpg",
+  "imgs": [
+   "img/f/t003.jpg"
+  ],
+  "t": "",
+  "novo": true,
+  "prazo": "",
+  "flores": "",
+  "tam": "",
+  "dura": "",
+  "cores": [
+   "Vermelho",
+   "Rosa",
+   "Branco",
+   "Colorido"
+  ],
+  "extras": [
+   "Chocolate",
+   "Pelúcia",
+   "Cartão",
+   "Balão"
+  ],
+  "cuid": ""
+ },
+ {
+  "id": "t007",
+  "n": "Buquê de Rosas nº 163",
+  "d": "Rosas selecionadas, montadas na hora com folhagens e embalagem caprichada.",
+  "c": "rosas",
+  "img": "img/f/t007.jpg",
+  "imgs": [
+   "img/f/t007.jpg"
+  ],
+  "t": "",
+  "novo": true,
+  "prazo": "",
+  "flores": "",
+  "tam": "",
+  "dura": "",
+  "cores": [
+   "Vermelho",
+   "Rosa",
+   "Branco",
+   "Colorido"
+  ],
+  "extras": [
+   "Chocolate",
+   "Pelúcia",
+   "Cartão",
+   "Balão"
+  ],
+  "cuid": ""
+ },
+ {
+  "id": "t009",
+  "n": "Buquê de Rosas nº 164",
+  "d": "Rosas selecionadas, montadas na hora com folhagens e embalagem caprichada.",
+  "c": "rosas",
+  "img": "img/f/t009.jpg",
+  "imgs": [
+   "img/f/t009.jpg"
+  ],
+  "t": "",
+  "novo": true,
+  "prazo": "",
+  "flores": "",
+  "tam": "",
+  "dura": "",
+  "cores": [
+   "Vermelho",
+   "Rosa",
+   "Branco",
+   "Colorido"
+  ],
+  "extras": [
+   "Chocolate",
+   "Pelúcia",
+   "Cartão",
+   "Balão"
+  ],
+  "cuid": ""
+ },
+ {
+  "id": "t004",
+  "n": "Buquê de Gérberas nº 22",
+  "d": "Gérberas coloridas e alegres, com acabamento delicado.",
+  "c": "gerberas",
+  "img": "img/f/t004.jpg",
+  "imgs": [
+   "img/f/t004.jpg"
+  ],
+  "t": "",
+  "novo": true,
+  "prazo": "",
+  "flores": "",
+  "tam": "",
+  "dura": "",
+  "cores": [
+   "Rosa",
+   "Colorido"
+  ],
+  "extras": [
+   "Chocolate",
+   "Cartão"
+  ],
+  "cuid": ""
+ },
+ {
+  "id": "t008",
+  "n": "Buquê de Gérberas nº 23",
+  "d": "Gérberas coloridas e alegres, com acabamento delicado.",
+  "c": "gerberas",
+  "img": "img/f/t008.jpg",
+  "imgs": [
+   "img/f/t008.jpg"
+  ],
+  "t": "",
+  "novo": true,
+  "prazo": "",
+  "flores": "",
+  "tam": "",
+  "dura": "",
+  "cores": [
+   "Rosa",
+   "Colorido"
+  ],
+  "extras": [
+   "Chocolate",
+   "Cartão"
+  ],
+  "cuid": ""
+ },
+ {
+  "id": "t010",
+  "n": "Buquê de Gérberas nº 24",
+  "d": "Gérberas coloridas e alegres, com acabamento delicado.",
+  "c": "gerberas",
+  "img": "img/f/t010.jpg",
+  "imgs": [
+   "img/f/t010.jpg"
+  ],
+  "t": "",
+  "novo": true,
+  "prazo": "",
+  "flores": "",
+  "tam": "",
+  "dura": "",
+  "cores": [
+   "Rosa",
+   "Colorido"
+  ],
+  "extras": [
+   "Chocolate",
+   "Cartão"
+  ],
+  "cuid": ""
+ },
+ {
+  "id": "t012",
+  "n": "Buquê de Gérberas nº 25",
+  "d": "Gérberas coloridas e alegres, com acabamento delicado.",
+  "c": "gerberas",
+  "img": "img/f/t012.jpg",
+  "imgs": [
+   "img/f/t012.jpg"
+  ],
+  "t": "",
+  "novo": true,
+  "prazo": "",
+  "flores": "",
+  "tam": "",
+  "dura": "",
+  "cores": [
+   "Rosa",
+   "Colorido"
+  ],
+  "extras": [
+   "Chocolate",
+   "Cartão"
+  ],
+  "cuid": ""
+ },
+ {
+  "id": "t011",
+  "n": "Buquê de Lírios nº 31",
+  "d": "Lírios perfumados com folhagens. Elegante para qualquer ocasião.",
+  "c": "lirios",
+  "img": "img/f/t011.jpg",
+  "imgs": [
+   "img/f/t011.jpg"
+  ],
+  "t": "",
+  "novo": true,
+  "prazo": "",
+  "flores": "",
+  "tam": "",
+  "dura": "",
+  "cores": [],
+  "extras": [
+   "Chocolate",
+   "Cartão"
+  ],
+  "cuid": ""
+ },
+ {
+  "id": "t005",
+  "n": "Presente Especial nº 94",
+  "d": "Flores com pelúcia, chocolates, balão ou vinho. Surpresa completa.",
+  "c": "presentes",
+  "img": "img/f/t005.jpg",
+  "imgs": [
+   "img/f/t005.jpg"
+  ],
+  "t": "",
+  "novo": true,
+  "prazo": "",
+  "flores": "",
+  "tam": "",
+  "dura": "",
+  "cores": [],
+  "extras": [
+   "Cartão",
+   "Balão"
+  ],
+  "cuid": ""
+ },
+ {
+  "id": "t006",
+  "n": "Cesta Especial nº 103",
+  "d": "Cesta montada com carinho: café da manhã, chocolates ou mimos. Monte do seu jeito.",
+  "c": "cestas",
+  "img": "img/f/t006.jpg",
+  "imgs": [
+   "img/f/t006.jpg"
+  ],
+  "t": "",
+  "novo": true,
+  "prazo": "",
+  "flores": "",
+  "tam": "",
+  "dura": "",
+  "cores": [],
+  "extras": [
+   "Flores",
+   "Balão",
+   "Cartão",
+   "Pelúcia"
+  ],
+  "cuid": ""
  }
 ]
