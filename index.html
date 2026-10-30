@@ -173,6 +173,10 @@ section{position:relative}
 }
 /* catálogo */
 .catalog{padding:130px 0 110px}
+.uniq{display:flex;gap:16px;align-items:flex-start;margin-top:34px;padding:20px 24px;border-radius:20px;background:var(--blush);border:1px solid var(--line)}
+.uniq .uq-ic{font-size:22px;line-height:1.4}
+.uniq p{margin:0;font-size:14.5px;line-height:1.65;color:var(--ink-2)}
+.uniq b{color:var(--ink);font-weight:600}
 .cat-head{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap}
 .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:40px}
 .chip{padding:10px 18px;border-radius:999px;border:1px solid var(--line);font-size:14px;font-weight:500;background:rgba(255,255,255,.5);transition:.3s var(--ease)}
@@ -504,8 +508,11 @@ footer::before{content:"";position:absolute;width:700px;height:700px;right:-200p
         <span class="eyebrow rv">Catálogo</span>
         <h2 class="title rv d1">Escolha o seu <em>presente</em></h2>
       </div>
-      <p class="lead rv d2"><b>🌸 Cada criação é única!</b><br>Nossos buquês e arranjos são preparados com todo cuidado e dedicação. Trabalhamos com flores naturais, cuja disponibilidade pode variar conforme a estação e a época do ano. Por isso, flores, cores, embalagens e complementos podem sofrer alterações, sempre preservando a beleza, a harmonia e a proposta de cada composição.<br><br>Gostou de algum? Toque em “Fazer pedido” e a mensagem já vai prontinha no WhatsApp.</p>
+      <p class="lead rv d2">Gostou de algum? Toque em “Fazer pedido” e a mensagem já vai prontinha no WhatsApp.</p>
     </div>
+    <div class="uniq rv">
+      <span class="uq-ic">🌸</span>
+      <p><b>Cada criação é única!</b> Nossos buquês e arranjos são preparados com todo cuidado e dedicação. Trabalhamos com flores naturais, cuja disponibilidade pode variar conforme a estação e a época do ano. Por isso, flores, cores, embalagens e complementos podem sofrer alterações, sempre preservando a beleza, a harmonia e a proposta de cada composição.</p>
     <div class="chips rv" role="tablist">
       <button class="chip on" data-f="all">Todos</button>
       <button class="chip" data-f="novo" id="chip-novo" hidden>✿ Novidades</button>
