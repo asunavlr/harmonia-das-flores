@@ -19558,5 +19558,64 @@
    "Cartão"
   ],
   "cuid": ""
+ },
+ {
+  "d": "Arranjos e decorações natalinas para a sua casa, mesa ou para presentear. Sob encomenda na temporada de fim de ano.",
+  "t": "",
+  "prazo": "Sob encomenda",
+  "flores": "Flores e elementos natalinos",
+  "tam": "Sob medida",
+  "dura": "Toda a temporada",
+  "cores": [],
+  "extras": [
+   "Cartão"
+  ],
+  "cuid": "",
+  "id": "v001",
+  "n": "Arranjo de Natal nº 30",
+  "c": "natal",
+  "img": "img/f/v001.jpg",
+  "imgs": [
+   "img/f/v001.jpg"
+  ],
+  "novo": false
+ },
+ {
+  "id": "v002",
+  "n": "Buquê de Noiva nº 54",
+  "d": "Buquê de noiva feito sob medida, com as flores e cores do seu casamento. Combine com a gente o estilo e a data.",
+  "c": "eventos",
+  "img": "img/f/v002.jpg",
+  "imgs": [
+   "img/f/v002.jpg"
+  ],
+  "t": "",
+  "novo": false,
+  "prazo": "Sob encomenda",
+  "flores": "Conforme a escolha dos noivos",
+  "tam": "Sob medida",
+  "dura": "",
+  "cores": [],
+  "extras": [],
+  "cuid": ""
+ },
+ {
+  "id": "v003",
+  "n": "Buquê de Noiva nº 55",
+  "d": "Buquê de noiva feito sob medida, com as flores e cores do seu casamento. Combine com a gente o estilo e a data.",
+  "c": "eventos",
+  "img": "img/f/v003.jpg",
+  "imgs": [
+   "img/f/v003.jpg"
+  ],
+  "t": "",
+  "novo": false,
+  "prazo": "Sob encomenda",
+  "flores": "Conforme a escolha dos noivos",
+  "tam": "Sob medida",
+  "dura": "",
+  "cores": [],
+  "extras": [],
+  "cuid": ""
  }
 ]
