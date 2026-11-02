@@ -147,6 +147,7 @@ dialog::backdrop{background:rgba(29,51,40,.5)}
           <option value="bambu">Bambu da sorte</option>
           <option value="eventos">Casamentos e eventos</option>
           <option value="natal">Natal</option>
+          <option value="funeral">Coroas e funeral</option>
           <option value="cestas">Cestas</option>
           <option value="presentes">Presentes</option>
         </select>
@@ -183,7 +184,7 @@ dialog::backdrop{background:rgba(29,51,40,.5)}
     <input id="fcuid" placeholder="Ex.: Trocar a água a cada 2 dias">
     <label for="ft">Etiqueta (opcional)</label>
     <input id="ft" placeholder="Ex.: Mais pedido">
-    <label class="check"><input type="checkbox" id="fnovo"> Mostrar como Novidade</label>
+    <label class="check" hidden><input type="checkbox" id="fnovo"> Mostrar como Novidade</label>
     <div class="row">
       <button class="btn btn-ghost" type="button" id="cancel">Cancelar</button>
       <button class="btn btn-ink" type="submit">Pronto</button>
@@ -195,7 +196,7 @@ dialog::backdrop{background:rgba(29,51,40,.5)}
 
 <script>
 const $ = (id) => document.getElementById(id);
-const CAT = {rosas: "Rosas", girassois: "Girassóis", campo: "Flores do campo", gerberas: "Gérberas", lirios: "Lírios", orquideas: "Orquídeas", plantas: "Plantas e vasos", bambu: "Bambu da sorte", eventos: "Casamentos e eventos", natal: "Natal", cestas: "Cestas", presentes: "Presentes"};
+const CAT = {rosas: "Rosas", girassois: "Girassóis", campo: "Flores do campo", gerberas: "Gérberas", lirios: "Lírios", orquideas: "Orquídeas", plantas: "Plantas e vasos", bambu: "Bambu da sorte", eventos: "Casamentos e eventos", natal: "Natal", funeral: "Coroas e funeral", cestas: "Cestas", presentes: "Presentes"};
 let pw = "";
 let items = [];
 let uploads = {}; // caminho -> base64
