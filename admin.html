@@ -151,6 +151,23 @@ dialog::backdrop{background:rgba(29,51,40,.5)}
           <option value="cestas">Cestas</option>
           <option value="presentes">Presentes</option>
         </select>
+        <label for="fc2" style="margin-top:10px">Também aparece em</label>
+        <select id="fc2">
+          <option value="">Nenhuma</option>
+          <option value="rosas">Rosas</option>
+          <option value="girassois">Girassóis</option>
+          <option value="campo">Flores do campo</option>
+          <option value="gerberas">Gérberas</option>
+          <option value="lirios">Lírios</option>
+          <option value="orquideas">Orquídeas</option>
+          <option value="plantas">Plantas e vasos</option>
+          <option value="bambu">Bambu da sorte</option>
+          <option value="eventos">Casamentos e eventos</option>
+          <option value="natal">Natal</option>
+          <option value="funeral">Coroas e funeral</option>
+          <option value="cestas">Cestas</option>
+          <option value="presentes">Presentes</option>
+        </select>
       </div>
       <div>
         <label for="fprazo">Disponibilidade</label>
@@ -256,10 +273,10 @@ $("fchips").addEventListener("click", (e) => { const b = e.target.closest("butto
 $("list").addEventListener("click", (e) => { if (e.target.id === "more") { limit += 40; render(); } });
 function render() {
   $("count").textContent = `${items.length} ${items.length === 1 ? "item" : "itens"} no site`;
-  const counts = {}; items.forEach((it) => (counts[it.c] = (counts[it.c] || 0) + 1));
+  const counts = {}; items.forEach((it) => { counts[it.c] = (counts[it.c] || 0) + 1; if (it.c2) counts[it.c2] = (counts[it.c2] || 0) + 1; });
   $("fchips").innerHTML = [["", "Todos", items.length], ...Object.entries(CAT).map(([k, v]) => [k, v, counts[k] || 0])]
     .map(([k, v, n]) => `<button data-c="${k}" class="${fcat === k ? "on" : ""}">${v}<small>${n}</small></button>`).join("");
-  const vis = items.map((it, i) => [it, i]).filter(([it]) => (!fcat || it.c === fcat) && (!fq || it.n.toLowerCase().includes(fq)));
+  const vis = items.map((it, i) => [it, i]).filter(([it]) => (!fcat || it.c === fcat || it.c2 === fcat) && (!fq || it.n.toLowerCase().includes(fq)));
   $("list").innerHTML = vis.length ? vis.slice(0, limit).map(([it, i]) => `
     <div class="item">
       <img src="${esc(src(cover(it)))}" alt="">
@@ -287,7 +304,7 @@ function openForm(i) {
   editing = i;
   const it = items[i] || { n: "", d: "", c: fcat || "rosas", p: "", t: "", novo: true };
   $("formTitle").textContent = i < 0 ? "Nova flor" : "Editar flor";
-  $("fn").value = it.n; $("fd").value = it.d; $("fc").value = it.c; $("fprazo").value = it.prazo || ""; $("fflores").value = it.flores || ""; $("ftam").value = it.tam || ""; $("fdura").value = it.dura || ""; $("fcores").value = (it.cores || []).join(", "); $("fextras").value = (it.extras || []).join(", "); $("fcuid").value = it.cuid || ""; $("ft").value = it.t || ""; $("fnovo").checked = !!it.novo;
+  $("fn").value = it.n; $("fd").value = it.d; $("fc").value = it.c; $("fc2").value = it.c2 || ""; $("fprazo").value = it.prazo || ""; $("fflores").value = it.flores || ""; $("ftam").value = it.tam || ""; $("fdura").value = it.dura || ""; $("fcores").value = (it.cores || []).join(", "); $("fextras").value = (it.extras || []).join(", "); $("fcuid").value = it.cuid || ""; $("ft").value = it.t || ""; $("fnovo").checked = !!it.novo;
   photos = i < 0 ? [] : list(it).slice();
   renderPics();
   $("file").value = "";
@@ -334,7 +351,7 @@ $("form").addEventListener("submit", (e) => {
     previews[path] = p;
     return path;
   });
-  const it = { id, n, d: $("fd").value.trim(), c: $("fc").value, img: imgs[0], imgs, t: $("ft").value.trim(), prazo: $("fprazo").value, flores: $("fflores").value.trim(), tam: $("ftam").value.trim(), dura: $("fdura").value.trim(), cores: csv("fcores"), extras: csv("fextras"), cuid: $("fcuid").value.trim(), novo: $("fnovo").checked };
+  const it = { id, n, d: $("fd").value.trim(), c: $("fc").value, c2: $("fc2").value !== $("fc").value ? $("fc2").value : "", img: imgs[0], imgs, t: $("ft").value.trim(), prazo: $("fprazo").value, flores: $("fflores").value.trim(), tam: $("ftam").value.trim(), dura: $("fdura").value.trim(), cores: csv("fcores"), extras: csv("fextras"), cuid: $("fcuid").value.trim(), novo: $("fnovo").checked };
   if (cur) items[editing] = it; else items.unshift(it);
   $("dlg").close(); render(); dirty();
 });
