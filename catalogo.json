@@ -20402,5 +20402,555 @@
    "Chocolate"
   ],
   "cuid": "Troque a água a cada dois dias e corte a ponta das hastes."
+ },
+ {
+  "id": "b001",
+  "n": "Flores para bolo nº 1",
+  "d": "Flores lilás e roxas com miolos coloridos, em composição alta no topo do bolo. Flores naturais montadas para o confeiteiro aplicar no bolo.",
+  "c": "bolos",
+  "c2": "campo",
+  "img": "img/f/b001.jpg",
+  "imgs": [
+   "img/f/b001.jpg"
+  ],
+  "t": "",
+  "novo": true,
+  "prazo": "Sob encomenda",
+  "flores": "Alstroemérias, astromélias e flores do campo",
+  "tam": "Sob medida para o bolo",
+  "dura": "Montadas no dia da entrega",
+  "cores": [],
+  "extras": [
+   "Cartão"
+  ],
+  "cuid": "Mantenha em local fresco e aplique no bolo perto da hora de servir."
+ },
+ {
+  "id": "b002",
+  "n": "Flores para bolo nº 2",
+  "d": "Cascata lateral de rosas brancas com mosquitinho, elegante para bolos de casamento e aniversário. Flores naturais montadas para o confeiteiro aplicar no bolo.",
+  "c": "bolos",
+  "c2": "rosas",
+  "img": "img/f/b002.jpg",
+  "imgs": [
+   "img/f/b002.jpg"
+  ],
+  "t": "",
+  "novo": true,
+  "prazo": "Sob encomenda",
+  "flores": "Rosas brancas e mosquitinho",
+  "tam": "Sob medida para o bolo",
+  "dura": "Montadas no dia da entrega",
+  "cores": [],
+  "extras": [
+   "Cartão"
+  ],
+  "cuid": "Mantenha em local fresco e aplique no bolo perto da hora de servir."
+ },
+ {
+  "id": "b003",
+  "n": "Flores para bolo nº 3",
+  "d": "Coroa de topo com rosa vermelha, ranúnculos e alstroemérias, ótima para bolos naked e red velvet. Flores naturais montadas para o confeiteiro aplicar no bolo.",
+  "c": "bolos",
+  "c2": "rosas",
+  "img": "img/f/b003.jpg",
+  "imgs": [
+   "img/f/b003.jpg"
+  ],
+  "t": "",
+  "novo": true,
+  "prazo": "Sob encomenda",
+  "flores": "Rosa vermelha, ranúnculos e alstroemérias",
+  "tam": "Sob medida para o bolo",
+  "dura": "Montadas no dia da entrega",
+  "cores": [],
+  "extras": [
+   "Cartão"
+  ],
+  "cuid": "Mantenha em local fresco e aplique no bolo perto da hora de servir."
+ },
+ {
+  "id": "b004",
+  "n": "Flores para bolo nº 4",
+  "d": "Delicada guirlanda de flores brancas miúdas para minibolos e bolos de um andar. Flores naturais montadas para o confeiteiro aplicar no bolo.",
+  "c": "bolos",
+  "c2": "campo",
+  "img": "img/f/b004.jpg",
+  "imgs": [
+   "img/f/b004.jpg"
+  ],
+  "t": "",
+  "novo": true,
+  "prazo": "Sob encomenda",
+  "flores": "Flores brancas miúdas e mosquitinho",
+  "tam": "Sob medida para o bolo",
+  "dura": "Montadas no dia da entrega",
+  "cores": [],
+  "extras": [
+   "Cartão"
+  ],
+  "cuid": "Mantenha em local fresco e aplique no bolo perto da hora de servir."
+ },
+ {
+  "id": "b005",
+  "n": "Flores para bolo nº 5",
+  "d": "Coroa de minirrosas e florzinhas cor-de-rosa em volta de todo o bolo. Flores naturais montadas para o confeiteiro aplicar no bolo.",
+  "c": "bolos",
+  "c2": "rosas",
+  "img": "img/f/b005.jpg",
+  "imgs": [
+   "img/f/b005.jpg"
+  ],
+  "t": "",
+  "novo": true,
+  "prazo": "Sob encomenda",
+  "flores": "Minirrosas e flores do campo",
+  "tam": "Sob medida para o bolo",
+  "dura": "Montadas no dia da entrega",
+  "cores": [],
+  "extras": [
+   "Cartão"
+  ],
+  "cuid": "Mantenha em local fresco e aplique no bolo perto da hora de servir."
+ },
+ {
+  "id": "b006",
+  "n": "Flores para bolo nº 6",
+  "d": "Composição de topo em tons de pêssego e coral, com flores secas para bolos modernos. Flores naturais montadas para o confeiteiro aplicar no bolo.",
+  "c": "bolos",
+  "c2": "gerberas",
+  "img": "img/f/b006.jpg",
+  "imgs": [
+   "img/f/b006.jpg"
+  ],
+  "t": "",
+  "novo": true,
+  "prazo": "Sob encomenda",
+  "flores": "Gérberas, flores secas e folhagens",
+  "tam": "Sob medida para o bolo",
+  "dura": "Montadas no dia da entrega",
+  "cores": [],
+  "extras": [
+   "Cartão"
+  ],
+  "cuid": "Mantenha em local fresco e aplique no bolo perto da hora de servir."
+ },
+ {
+  "id": "b007",
+  "n": "Flores para bolo nº 7",
+  "d": "Topo romântico de flores rosas e brancas, cheio e volumoso. Flores naturais montadas para o confeiteiro aplicar no bolo.",
+  "c": "bolos",
+  "c2": "rosas",
+  "img": "img/f/b007.jpg",
+  "imgs": [
+   "img/f/b007.jpg"
+  ],
+  "t": "",
+  "novo": true,
+  "prazo": "Sob encomenda",
+  "flores": "Rosas, cravos e flores sortidas",
+  "tam": "Sob medida para o bolo",
+  "dura": "Montadas no dia da entrega",
+  "cores": [],
+  "extras": [
+   "Cartão"
+  ],
+  "cuid": "Mantenha em local fresco e aplique no bolo perto da hora de servir."
+ },
+ {
+  "id": "b008",
+  "n": "Flores para bolo nº 8",
+  "d": "Arranjo colorido em tons de laranja para bolos de festa e eventos corporativos. Flores naturais montadas para o confeiteiro aplicar no bolo.",
+  "c": "bolos",
+  "c2": "campo",
+  "img": "img/f/b008.jpg",
+  "imgs": [
+   "img/f/b008.jpg"
+  ],
+  "t": "",
+  "novo": true,
+  "prazo": "Sob encomenda",
+  "flores": "Alstroemérias e flores sortidas",
+  "tam": "Sob medida para o bolo",
+  "dura": "Montadas no dia da entrega",
+  "cores": [],
+  "extras": [
+   "Cartão"
+  ],
+  "cuid": "Mantenha em local fresco e aplique no bolo perto da hora de servir."
+ },
+ {
+  "id": "b009",
+  "n": "Flores para bolo nº 9",
+  "d": "Arranjo de rosas brancas com folhagens verdes, clássico para noivados e bodas. Flores naturais montadas para o confeiteiro aplicar no bolo.",
+  "c": "bolos",
+  "c2": "rosas",
+  "img": "img/f/b009.jpg",
+  "imgs": [
+   "img/f/b009.jpg"
+  ],
+  "t": "",
+  "novo": true,
+  "prazo": "Sob encomenda",
+  "flores": "Rosas brancas e folhagens",
+  "tam": "Sob medida para o bolo",
+  "dura": "Montadas no dia da entrega",
+  "cores": [],
+  "extras": [
+   "Cartão"
+  ],
+  "cuid": "Mantenha em local fresco e aplique no bolo perto da hora de servir."
+ },
+ {
+  "id": "b010",
+  "n": "Flores para bolo nº 10",
+  "d": "Rosa vermelha com flores laranja no topo de bolo de dois andares, combina com toppers personalizados. Flores naturais montadas para o confeiteiro aplicar no bolo.",
+  "c": "bolos",
+  "c2": "rosas",
+  "img": "img/f/b010.jpg",
+  "imgs": [
+   "img/f/b010.jpg"
+  ],
+  "t": "",
+  "novo": true,
+  "prazo": "Sob encomenda",
+  "flores": "Rosa vermelha e flores sortidas",
+  "tam": "Sob medida para o bolo",
+  "dura": "Montadas no dia da entrega",
+  "cores": [],
+  "extras": [
+   "Cartão"
+  ],
+  "cuid": "Mantenha em local fresco e aplique no bolo perto da hora de servir."
+ },
+ {
+  "id": "b011",
+  "n": "Flores para bolo nº 11",
+  "d": "Topo simples e delicado com rosa cor-de-rosa e folhagem, ideal para bolos naked. Flores naturais montadas para o confeiteiro aplicar no bolo.",
+  "c": "bolos",
+  "c2": "rosas",
+  "img": "img/f/b011.jpg",
+  "imgs": [
+   "img/f/b011.jpg"
+  ],
+  "t": "",
+  "novo": true,
+  "prazo": "Sob encomenda",
+  "flores": "Rosa e folhagens",
+  "tam": "Sob medida para o bolo",
+  "dura": "Montadas no dia da entrega",
+  "cores": [],
+  "extras": [
+   "Cartão"
+  ],
+  "cuid": "Mantenha em local fresco e aplique no bolo perto da hora de servir."
+ },
+ {
+  "id": "b012",
+  "n": "Flores para bolo nº 12",
+  "d": "Rosas cor-de-rosa distribuídas pelos andares de bolo naked para casamentos. Flores naturais montadas para o confeiteiro aplicar no bolo.",
+  "c": "bolos",
+  "c2": "eventos",
+  "img": "img/f/b012.jpg",
+  "imgs": [
+   "img/f/b012.jpg"
+  ],
+  "t": "",
+  "novo": true,
+  "prazo": "Sob encomenda",
+  "flores": "Rosas e folhagens",
+  "tam": "Sob medida para o bolo",
+  "dura": "Montadas no dia da entrega",
+  "cores": [],
+  "extras": [
+   "Cartão"
+  ],
+  "cuid": "Mantenha em local fresco e aplique no bolo perto da hora de servir."
+ },
+ {
+  "id": "b013",
+  "n": "Flores para bolo nº 13",
+  "d": "Crisântemos lilás em miniatura para bolos pequenos e coloridos. Flores naturais montadas para o confeiteiro aplicar no bolo.",
+  "c": "bolos",
+  "c2": "campo",
+  "img": "img/f/b013.jpg",
+  "imgs": [
+   "img/f/b013.jpg"
+  ],
+  "t": "",
+  "novo": true,
+  "prazo": "Sob encomenda",
+  "flores": "Crisântemos",
+  "tam": "Sob medida para o bolo",
+  "dura": "Montadas no dia da entrega",
+  "cores": [],
+  "extras": [
+   "Cartão"
+  ],
+  "cuid": "Mantenha em local fresco e aplique no bolo perto da hora de servir."
+ },
+ {
+  "id": "b014",
+  "n": "Flores para bolo nº 14",
+  "d": "Rosa amarela, lírios brancos e mosquitinho em bolo de dois andares. Flores naturais montadas para o confeiteiro aplicar no bolo.",
+  "c": "bolos",
+  "c2": "lirios",
+  "img": "img/f/b014.jpg",
+  "imgs": [
+   "img/f/b014.jpg"
+  ],
+  "t": "",
+  "novo": true,
+  "prazo": "Sob encomenda",
+  "flores": "Rosa, lírios e mosquitinho",
+  "tam": "Sob medida para o bolo",
+  "dura": "Montadas no dia da entrega",
+  "cores": [],
+  "extras": [
+   "Cartão"
+  ],
+  "cuid": "Mantenha em local fresco e aplique no bolo perto da hora de servir."
+ },
+ {
+  "id": "b015",
+  "n": "Flores para bolo nº 15",
+  "d": "Cobertura total de flores secas miúdas em vermelho, um efeito marcante em bolos de um andar. Flores naturais montadas para o confeiteiro aplicar no bolo.",
+  "c": "bolos",
+  "c2": "campo",
+  "img": "img/f/b015.jpg",
+  "imgs": [
+   "img/f/b015.jpg"
+  ],
+  "t": "",
+  "novo": true,
+  "prazo": "Sob encomenda",
+  "flores": "Flores secas e mosquitinho tingido",
+  "tam": "Sob medida para o bolo",
+  "dura": "Montadas no dia da entrega",
+  "cores": [],
+  "extras": [
+   "Cartão"
+  ],
+  "cuid": "Mantenha em local fresco e aplique no bolo perto da hora de servir."
+ },
+ {
+  "id": "b016",
+  "n": "Flores para bolo nº 16",
+  "d": "Topo alegre com rosa amarela, alstroemérias brancas e folhagens. Flores naturais montadas para o confeiteiro aplicar no bolo.",
+  "c": "bolos",
+  "c2": "rosas",
+  "img": "img/f/b016.jpg",
+  "imgs": [
+   "img/f/b016.jpg"
+  ],
+  "t": "",
+  "novo": true,
+  "prazo": "Sob encomenda",
+  "flores": "Rosa amarela, alstroemérias e folhagens",
+  "tam": "Sob medida para o bolo",
+  "dura": "Montadas no dia da entrega",
+  "cores": [],
+  "extras": [
+   "Cartão"
+  ],
+  "cuid": "Mantenha em local fresco e aplique no bolo perto da hora de servir."
+ },
+ {
+  "id": "b017",
+  "n": "Flores para bolo nº 17",
+  "d": "Raminhos de lavanda aplicados na lateral, delicado e perfumado. Flores naturais montadas para o confeiteiro aplicar no bolo.",
+  "c": "bolos",
+  "c2": "campo",
+  "img": "img/f/b017.jpg",
+  "imgs": [
+   "img/f/b017.jpg"
+  ],
+  "t": "",
+  "novo": true,
+  "prazo": "Sob encomenda",
+  "flores": "Lavanda",
+  "tam": "Sob medida para o bolo",
+  "dura": "Montadas no dia da entrega",
+  "cores": [],
+  "extras": [
+   "Cartão"
+  ],
+  "cuid": "Mantenha em local fresco e aplique no bolo perto da hora de servir."
+ },
+ {
+  "id": "b018",
+  "n": "Flores para bolo nº 18",
+  "d": "Rosas em tons de vinho e rosa no topo e na base do bolo. Flores naturais montadas para o confeiteiro aplicar no bolo.",
+  "c": "bolos",
+  "c2": "rosas",
+  "img": "img/f/b018.jpg",
+  "imgs": [
+   "img/f/b018.jpg"
+  ],
+  "t": "",
+  "novo": true,
+  "prazo": "Sob encomenda",
+  "flores": "Rosas e cravos",
+  "tam": "Sob medida para o bolo",
+  "dura": "Montadas no dia da entrega",
+  "cores": [],
+  "extras": [
+   "Cartão"
+  ],
+  "cuid": "Mantenha em local fresco e aplique no bolo perto da hora de servir."
+ },
+ {
+  "id": "b019",
+  "n": "Flores para bolo nº 19",
+  "d": "Rosas cor-de-rosa com framboesas, para bolos românticos. Flores naturais montadas para o confeiteiro aplicar no bolo.",
+  "c": "bolos",
+  "c2": "rosas",
+  "img": "img/f/b019.jpg",
+  "imgs": [
+   "img/f/b019.jpg"
+  ],
+  "t": "",
+  "novo": true,
+  "prazo": "Sob encomenda",
+  "flores": "Rosas cor-de-rosa",
+  "tam": "Sob medida para o bolo",
+  "dura": "Montadas no dia da entrega",
+  "cores": [],
+  "extras": [
+   "Cartão"
+  ],
+  "cuid": "Mantenha em local fresco e aplique no bolo perto da hora de servir."
+ },
+ {
+  "id": "b020",
+  "n": "Flores para bolo nº 20",
+  "d": "Flores brancas miúdas em arranjo alongado sobre bolo de um andar. Flores naturais montadas para o confeiteiro aplicar no bolo.",
+  "c": "bolos",
+  "c2": "campo",
+  "img": "img/f/b020.jpg",
+  "imgs": [
+   "img/f/b020.jpg"
+  ],
+  "t": "",
+  "novo": true,
+  "prazo": "Sob encomenda",
+  "flores": "Flores brancas e mosquitinho",
+  "tam": "Sob medida para o bolo",
+  "dura": "Montadas no dia da entrega",
+  "cores": [],
+  "extras": [
+   "Cartão"
+  ],
+  "cuid": "Mantenha em local fresco e aplique no bolo perto da hora de servir."
+ },
+ {
+  "id": "b021",
+  "n": "Flores para bolo nº 21",
+  "d": "Nuvem de flores cor-de-rosa miúdas no topo e na base. Flores naturais montadas para o confeiteiro aplicar no bolo.",
+  "c": "bolos",
+  "c2": "campo",
+  "img": "img/f/b021.jpg",
+  "imgs": [
+   "img/f/b021.jpg"
+  ],
+  "t": "",
+  "novo": true,
+  "prazo": "Sob encomenda",
+  "flores": "Mosquitinho tingido e flores miúdas",
+  "tam": "Sob medida para o bolo",
+  "dura": "Montadas no dia da entrega",
+  "cores": [],
+  "extras": [
+   "Cartão"
+  ],
+  "cuid": "Mantenha em local fresco e aplique no bolo perto da hora de servir."
+ },
+ {
+  "id": "b022",
+  "n": "Flores para bolo nº 22",
+  "d": "Rosas amarelas com lírios brancos, alegre e luminoso. Flores naturais montadas para o confeiteiro aplicar no bolo.",
+  "c": "bolos",
+  "c2": "rosas",
+  "img": "img/f/b022.jpg",
+  "imgs": [
+   "img/f/b022.jpg"
+  ],
+  "t": "",
+  "novo": true,
+  "prazo": "Sob encomenda",
+  "flores": "Rosas amarelas e lírios",
+  "tam": "Sob medida para o bolo",
+  "dura": "Montadas no dia da entrega",
+  "cores": [],
+  "extras": [
+   "Cartão"
+  ],
+  "cuid": "Mantenha em local fresco e aplique no bolo perto da hora de servir."
+ },
+ {
+  "id": "b023",
+  "n": "Flores para bolo nº 23",
+  "d": "Coroa de margaridas e mosquitinho branco em volta do topo. Flores naturais montadas para o confeiteiro aplicar no bolo.",
+  "c": "bolos",
+  "c2": "campo",
+  "img": "img/f/b023.jpg",
+  "imgs": [
+   "img/f/b023.jpg"
+  ],
+  "t": "",
+  "novo": true,
+  "prazo": "Sob encomenda",
+  "flores": "Margaridas e mosquitinho",
+  "tam": "Sob medida para o bolo",
+  "dura": "Montadas no dia da entrega",
+  "cores": [],
+  "extras": [
+   "Cartão"
+  ],
+  "cuid": "Mantenha em local fresco e aplique no bolo perto da hora de servir."
+ },
+ {
+  "id": "b024",
+  "n": "Flores para bolo nº 24",
+  "d": "Alstroemérias rosa e pêssego em composição alta. Flores naturais montadas para o confeiteiro aplicar no bolo.",
+  "c": "bolos",
+  "c2": "campo",
+  "img": "img/f/b024.jpg",
+  "imgs": [
+   "img/f/b024.jpg"
+  ],
+  "t": "",
+  "novo": true,
+  "prazo": "Sob encomenda",
+  "flores": "Alstroemérias",
+  "tam": "Sob medida para o bolo",
+  "dura": "Montadas no dia da entrega",
+  "cores": [],
+  "extras": [
+   "Cartão"
+  ],
+  "cuid": "Mantenha em local fresco e aplique no bolo perto da hora de servir."
+ },
+ {
+  "id": "b025",
+  "n": "Flores para bolo nº 25",
+  "d": "Alstroemérias cor-de-rosa em bolo naked, leve e colorido. Flores naturais montadas para o confeiteiro aplicar no bolo.",
+  "c": "bolos",
+  "c2": "campo",
+  "img": "img/f/b025.jpg",
+  "imgs": [
+   "img/f/b025.jpg"
+  ],
+  "t": "",
+  "novo": true,
+  "prazo": "Sob encomenda",
+  "flores": "Alstroemérias e folhagens",
+  "tam": "Sob medida para o bolo",
+  "dura": "Montadas no dia da entrega",
+  "cores": [],
+  "extras": [
+   "Cartão"
+  ],
+  "cuid": "Mantenha em local fresco e aplique no bolo perto da hora de servir."
  }
 ]
